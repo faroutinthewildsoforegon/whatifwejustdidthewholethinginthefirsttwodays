@@ -31,8 +31,7 @@ class myButton extends Button {
 	}
 	void onClick(){
 		//System.out.println("Clicked " + i + ".");
-		if (j.yourTurn)
-			yeet(i);
+		yeet(i);
 	}
 	void yeet(int i){
 		//System.out.println("Yeeting " + i + ".");
@@ -52,11 +51,9 @@ class myButton extends Button {
 		//System.out.println("Board is " + j.b + ".");
 		//thisImage.setImage(new Image("flip.png"));
 		//this.setImage("flip.png");
-		///////j.yourTurn = false;
 	}
 }
 public class j extends Application {
-	static boolean yourTurn = true;
 	static int b=0; // The state of the board. 
 	public myButton imgButton(String in, int i){
 		ImageView image = new ImageView(in); // Move this within class? 
@@ -117,9 +114,11 @@ public class j extends Application {
 				{
 					out.writeInt(b);
 					int tmp = in.readInt();
-					//yourTurn = (b==tmp);
-					b = tmp;
-					refreshBoard();
+					if (b!=tmp)
+					{
+						b = tmp;
+						//refreshBoard();
+					}
 					System.out.println(b);
 				}
 			}

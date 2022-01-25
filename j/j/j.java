@@ -9,17 +9,8 @@ import javafx.geometry.*;
 	import javafx.scene.text.*;
 import javafx.scene.*;
 
-/*
-class Bt extends Button {
-	public int x;
-	public int y;
-
-}
-*/
 class myButton extends Button {
-	 public  int i; // Index. 
-	// It's prudent to make things you're unsure about look like shit. 
-	// That way, you and your fellows have a better change to notice it later. 
+	int i; // Index. 
 	ImageView thisImage;
 	void setImage(String in){
 		thisImage.setImage(new Image(in));
@@ -30,14 +21,10 @@ class myButton extends Button {
 		thisImage = lst;
 	}
 	void onClick(){
-		//System.out.println("Clicked " + i + ".");
 		if (j.yourTurn)
 			yeet(i);
 	}
 	void yeet(int i){
-		//System.out.println("Yeeting " + i + ".");
-//,		if (i < 0)
-//,			return;
 // I wonder if the compiler is smart enough to work this one out. 
 		int tmp=1;
 		for (int j=0;j<i;++j)
@@ -47,11 +34,6 @@ class myButton extends Button {
 			j.b += tmp;
 		else
 			System.out.println("Slot taken.");
-		//System.out.println("Yeet.");
-//,		this.i = -1;
-		//System.out.println("Board is " + j.b + ".");
-		//thisImage.setImage(new Image("flip.png"));
-		//this.setImage("flip.png");
 		///////j.yourTurn = false;
 	}
 }
@@ -61,7 +43,6 @@ public class j extends Application {
 	public myButton imgButton(String in, int i){
 		ImageView image = new ImageView(in); // Move this within class? 
 		myButton bt = new myButton("",image,i);
-		//bt.setOnAction(e -> System.out.println("Clicked " + bt.i + "."));
 		bt.setOnAction(e -> bt.onClick());
 		return bt;
 	}
@@ -86,20 +67,18 @@ public class j extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		System.out.println("In start.");
-		//Stage stage = new Stage();
-		//stage.show();
 		GridPane pane = new GridPane();
 		pane.setAlignment(Pos.CENTER);
 		for (int i=0;i<9;++i)
 		{
 			myButtons[i] = imgButton("blank.png",i);
 			pane.add(myButtons[i],i%3,i/3);
-			//pane.add(imgButton("blank.png",i),i%3,i/3);
 		}
 		primaryStage.setScene(new Scene(pane));
 		System.out.println("Executing show.");
 		primaryStage.show();
 		System.out.println("Executed show.");
+		//new Thread(() -> {while(true)System.out.println("b: " + b);});
 		new Thread(() -> {
 		// Have to use new thread. 
 			try {
@@ -115,11 +94,12 @@ public class j extends Application {
 				out = new DataOutputStream(socket.getOutputStream());
 				while (true)
 				{
-					out.writeInt(b);
 					int tmp = in.readInt();
-					//yourTurn = (b==tmp);
-					b = tmp;
+					//b = (tmp > b)? tmp : b;
+					if (tmp > b)
+						b = tmp;
 					refreshBoard();
+					out.writeInt(b);
 					System.out.println(b);
 				}
 			}

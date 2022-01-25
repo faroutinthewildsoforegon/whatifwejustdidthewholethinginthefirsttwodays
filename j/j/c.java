@@ -9,17 +9,8 @@ import javafx.geometry.*;
 	import javafx.scene.text.*;
 import javafx.scene.*;
 
-/*
-class Bt extends Button {
-	public int x;
-	public int y;
-
-}
-*/
 class myButton extends Button {
-	 public  int i; // Index. 
-	// It's prudent to make things you're unsure about look like shit. 
-	// That way, you and your fellows have a better change to notice it later. 
+	int i; // Index. 
 	ImageView thisImage;
 	void setImage(String in){
 		thisImage.setImage(new Image(in));
@@ -30,38 +21,30 @@ class myButton extends Button {
 		thisImage = lst;
 	}
 	void onClick(){
-		//System.out.println("Clicked " + i + ".");
-		if (j.yourTurn)
+		if (c.yourTurn)
 			yeet(i);
 	}
 	void yeet(int i){
-		//System.out.println("Yeeting " + i + ".");
-//,		if (i < 0)
-//,			return;
+		System.out.println("Yeet.");
 // I wonder if the compiler is smart enough to work this one out. 
 		int tmp=1;
 		for (int j=0;j<i;++j)
 			tmp *= 3;
 // I wonder if the compiler is smart enough to work this one out. 
-		if (j.b/tmp%3==0)
-			j.b += tmp;
+		if (c.b/tmp%3==0)
+			c.b += tmp*2;
 		else
-			System.out.println("Slot taken.");
-		//System.out.println("Yeet.");
-//,		this.i = -1;
-		//System.out.println("Board is " + j.b + ".");
-		//thisImage.setImage(new Image("flip.png"));
-		//this.setImage("flip.png");
-		///////j.yourTurn = false;
+			System.out.println("At that location it's-" );
+		///////c.yourTurn = false;
+		c.showBoard(c.b);
 	}
 }
-public class j extends Application {
+public class c extends Application {
 	static boolean yourTurn = true;
 	static int b=0; // The state of the board. 
 	public myButton imgButton(String in, int i){
 		ImageView image = new ImageView(in); // Move this within class? 
 		myButton bt = new myButton("",image,i);
-		//bt.setOnAction(e -> System.out.println("Clicked " + bt.i + "."));
 		bt.setOnAction(e -> bt.onClick());
 		return bt;
 	}
@@ -86,41 +69,40 @@ public class j extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		System.out.println("In start.");
-		//Stage stage = new Stage();
-		//stage.show();
 		GridPane pane = new GridPane();
 		pane.setAlignment(Pos.CENTER);
 		for (int i=0;i<9;++i)
 		{
 			myButtons[i] = imgButton("blank.png",i);
 			pane.add(myButtons[i],i%3,i/3);
-			//pane.add(imgButton("blank.png",i),i%3,i/3);
 		}
 		primaryStage.setScene(new Scene(pane));
 		System.out.println("Executing show.");
 		primaryStage.show();
 		System.out.println("Executed show.");
+		//new Thread(() -> {while(true)System.out.println("b: " + b);});
+		//new Thread(() -> {while(true)System.out.println("b: " + b);});
 		new Thread(() -> {
 		// Have to use new thread. 
 			try {
 				System.out.println("Hallo, moto!");
 				int port = 8000;
+				String host = "localhost";
 				DataInputStream in;
 				DataOutputStream out;
-				ServerSocket server;
 				Socket socket;
-				server = new ServerSocket(port);
-				socket = server.accept();
+				socket = new Socket(host, port);
 				in = new DataInputStream(socket.getInputStream());
 				out = new DataOutputStream(socket.getOutputStream());
 				while (true)
 				{
 					out.writeInt(b);
 					int tmp = in.readInt();
-					//yourTurn = (b==tmp);
-					b = tmp;
 					refreshBoard();
-					System.out.println(b);
+					//b = (tmp > b)? tmp : b;
+					if (tmp > b)
+						b = tmp;
+					//,showBoard(b);
 				}
 			}
 			catch(IOException ex){
@@ -133,4 +115,25 @@ public class j extends Application {
 		System.out.println("Hello, world!");
 		Application.launch(args);
 	}
+	public static void showBoard(int b){
+		for (int i=1;i<=9;++i)
+		{
+			//char tmp = (char)((b/(i*3))%3);
+			//byte tmp = (byte)(b/(i*3));
+			byte tmp = (byte)(b%3);
+			switch(tmp)
+			{
+				case 0:tmp = '#';break;
+				case 1:tmp = 'X';break;
+				case 2:tmp = 'O';break;
+			}
+			// Fix this. 
+			System.out.print((char)tmp);
+			if (i%3 == 0)
+				System.out.println();
+			// Fix this. 
+			b /= 3;
+		}
+	}
 }
+

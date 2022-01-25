@@ -52,7 +52,7 @@ class myButton extends Button {
 		//System.out.println("Board is " + j.b + ".");
 		//thisImage.setImage(new Image("flip.png"));
 		//this.setImage("flip.png");
-		///////j.yourTurn = false;
+		j.yourTurn = false;
 	}
 }
 public class j extends Application {
@@ -117,8 +117,12 @@ public class j extends Application {
 				{
 					out.writeInt(b);
 					int tmp = in.readInt();
-					//yourTurn = (b==tmp);
-					b = tmp;
+					if (b!=tmp)
+					{
+						b = tmp;
+						//refreshBoard();
+						yourTurn = true;
+					}
 					refreshBoard();
 					System.out.println(b);
 				}
