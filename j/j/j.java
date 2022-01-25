@@ -23,6 +23,7 @@ class myButton extends Button {
 	void onClick(){
 		if (j.yourTurn)
 			yeet(i);
+		   else return; // Is this even necessary? 
 	}
 	void yeet(int i){
 // I wonder if the compiler is smart enough to work this one out. 
@@ -106,19 +107,55 @@ public class j extends Application {
 
 					out.writeInt(b);
 					System.out.println(b);
+					/*
 					if (b == 13 || b == 13*27 || b == 13*27*27  ||  b == 757 || b == 757*3 || b == 757*3*3  ||  b == 1+81+(729*9) || b == 9+81+729)
 					{
 						System.out.println("You won!");
 						System.exit(1);
 					}
+					*/
+					CheckIfWon(1);
 				}
 			}
 			catch(IOException ex){
 				System.out.println("Error.");
 				System.out.println("You know, that probably means you lost!");
 				System.out.println(ex);
+				   System.exit(2);
 			}
 		}).start();
+	}
+	void CheckIfWon(int in){
+		if (checkIfWon(in))
+			{
+				System.out.println("You won!");
+				System.exit(1);
+			}
+	}
+	boolean checkIfWon(int in){
+		int B = b;
+		for (int i=1;i<=3;++i)
+		{
+			if (B%27 == 13*in)
+				return true;
+			B /= 27;
+		}
+		/*
+		if (B%3 == in && (B/27)%3 == (B/(27*27))%3)// && (B/27)%3 == in)
+			return true;
+		*/
+		B = b;
+		for (int i=1;i<=9;i*=3)
+		{
+			if ((B%(i*3) == (B/27)%(i*3)) && (B/(27*27)%(i*3) == in) && (in == B%(i*3))) // This might break. 
+				return true;
+		}
+		//                                                          Right diagonal \/. 
+		if ((b%3 == (b/81)%3 && (b/6561)%3 == in && in == b%3) || ((b/9)%3 == (b/81)%3 && (b/729)%3 == in && in == (b/9)%3))
+		// Left diagonal ^. 
+			return true;
+		// I'd really love to see what the compiler made out of this one. 
+		return false;
 	}
 	public static void main(String[] args){
 		System.out.println("Hello, world!");
