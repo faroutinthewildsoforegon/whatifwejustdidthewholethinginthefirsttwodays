@@ -34,7 +34,7 @@ class myButton extends Button {
 			j.b += tmp;
 		else
 			System.out.println("Slot taken.");
-		///////j.yourTurn = false;
+		j.yourTurn = false;
 	}
 }
 public class j extends Application {
@@ -95,16 +95,27 @@ public class j extends Application {
 				while (true)
 				{
 					int tmp = in.readInt();
+					yourTurn = (yourTurn || tmp != b); //TMHHW
+					if (b > tmp) // DON'T TOUCH THIS. 
+						yourTurn = false; // DON'T TOUCH THIS. 
 					//b = (tmp > b)? tmp : b;
 					if (tmp > b)
 						b = tmp;
 					refreshBoard();
+					
+
 					out.writeInt(b);
 					System.out.println(b);
+					if (b == 13 || b == 13*27 || b == 13*27*27  ||  b == 757 || b == 757*3 || b == 757*3*3  ||  b == 1+81+(729*9) || b == 9+81+729)
+					{
+						System.out.println("You won!");
+						System.exit(1);
+					}
 				}
 			}
 			catch(IOException ex){
 				System.out.println("Error.");
+				System.out.println("You know, that probably means you lost!");
 				System.out.println(ex);
 			}
 		}).start();

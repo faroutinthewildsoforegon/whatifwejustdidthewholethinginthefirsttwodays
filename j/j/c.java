@@ -35,7 +35,7 @@ class myButton extends Button {
 			c.b += tmp*2;
 		else
 			System.out.println("At that location it's-" );
-		///////c.yourTurn = false;
+		c.yourTurn = false;
 		c.showBoard(c.b);
 	}
 }
@@ -98,15 +98,24 @@ public class c extends Application {
 				{
 					out.writeInt(b);
 					int tmp = in.readInt();
+					yourTurn = (yourTurn || tmp != b); // TMHWW. 
+					if (b > tmp) // DON'T TOUCH THIS. 
+						yourTurn = false; // DON'T TOUCH THIS. 
 					refreshBoard();
 					//b = (tmp > b)? tmp : b;
 					if (tmp > b)
 						b = tmp;
 					//,showBoard(b);
+					if (b == 13 *2|| b == 13*27 *2|| b == 13*27*27  *2||  b == 757 *2|| b == 757*3 *2|| b == 757*3*3  *2||  b == (1+81+(729*9)) *2|| b == (9+81+729)*2)
+					{
+						System.out.println("You won!");
+						System.exit(1);
+					}
 				}
 			}
 			catch(IOException ex){
 				System.out.println("Error.");
+				System.out.println("You know, that probably means you lost!");
 				System.out.println(ex);
 			}
 		}).start();
