@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.weebaholics.tictactoe.Main">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="220.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="360.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="100.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="100.0" layoutY="340.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+      <TextField layoutX="137.0" layoutY="539.0" />
+      <Label layoutX="63.0" layoutY="543.0" prefHeight="17.0" prefWidth="74.0" text="Enter move:" />
+   </children>
+</AnchorPane>
