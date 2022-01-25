@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.*;
 //import javafx.application.Application;
+import java.util.Scanner;
 
 public class c {
 	public static void main(String[] args){
@@ -15,8 +16,11 @@ public class c {
 			socket = new Socket(host, port);
 			in = new DataInputStream(socket.getInputStream());
 			out = new DataOutputStream(socket.getOutputStream());
-			out.writeInt(7);
-			System.out.println(in.readInt());
+				Scanner inp = new Scanner(System.in);
+				while (true)
+					out.writeInt(inp.nextInt());
+			//	out.writeInt(7);
+			//	System.out.println(in.readInt());
 		}
 		catch(IOException ex){
 			System.out.println("Error.");

@@ -2,15 +2,24 @@ import java.io.*;
 import java.net.*;
 import javafx.application.*;
 import javafx.stage.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.scene.image.*;
+import javafx.geometry.*;
+	import javafx.scene.text.*;
 
+/*
+class Bt extends Button {
+	public int x;
+	public int y;
+
+}
+*/
 public class j extends Application {
+	int b=0; // The state of the board. 
 	@Override
 	public void start(Stage primaryStage) {
 		Stage stage = new Stage();
-		stage.show();
-	}
-	public static void main(String[] args){
-		Application.launch(args);
 		try {
 			System.out.println("Hello, world!");
 			int port = 8000;
@@ -23,10 +32,16 @@ public class j extends Application {
 			in = new DataInputStream(socket.getInputStream());
 			out = new DataOutputStream(socket.getOutputStream());
 			System.out.println(in.readInt());
-			out.writeInt(5);
+			//out.writeInt(5);
+			stage.show();
 		}
 		catch(IOException ex){
 			System.out.println("Error.");
+			System.out.println(ex);
 		}
+	}
+	public static void main(String[] args){
+		System.out.println("Hello, world!");
+		Application.launch(args);
 	}
 }
