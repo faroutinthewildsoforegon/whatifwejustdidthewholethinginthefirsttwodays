@@ -36,13 +36,23 @@ class myButton extends Button {
 		else
 			System.out.println("Slot taken.");
 		j.yourTurn = false;
+		/*
+		try {
+			j.out.writeInt(j.b);
+		} catch (IOException e) {
+			System.out.println("Failed to send.");
+		}
+		*/
 	}
 }
 public class j extends Application {
+	static DataOutputStream out;
 	static boolean yourTurn = true;
 	static int b=0; // The state of the board. 
 	public myButton imgButton(String in, int i){
 		ImageView image = new ImageView(in); // Move this within class? 
+		 image.setPreserveRatio(true);
+		 image.setFitHeight(200);
 		myButton bt = new myButton("",image,i);
 		bt.setOnAction(e -> bt.onClick());
 		return bt;
@@ -75,6 +85,7 @@ public class j extends Application {
 			myButtons[i] = imgButton("blank.png",i);
 			pane.add(myButtons[i],i%3,i/3);
 		}
+		 primaryStage.setTitle("j.java");
 		primaryStage.setScene(new Scene(pane));
 		System.out.println("Executing show.");
 		primaryStage.show();
@@ -86,13 +97,13 @@ public class j extends Application {
 				System.out.println("Hallo, moto!");
 				int port = 8000;
 				DataInputStream in;
-				DataOutputStream out;
+				//;DataOutputStream out;
 				ServerSocket server;
 				Socket socket;
 				server = new ServerSocket(port);
 				socket = server.accept();
 				in = new DataInputStream(socket.getInputStream());
-				out = new DataOutputStream(socket.getOutputStream());
+				;out = new DataOutputStream(socket.getOutputStream());
 				while (true)
 				{
 					int tmp = in.readInt();

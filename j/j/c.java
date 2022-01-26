@@ -45,6 +45,8 @@ public class c extends Application {
 	static int b=0; // The state of the board. 
 	public myButton imgButton(String in, int i){
 		ImageView image = new ImageView(in); // Move this within class? 
+		 image.setPreserveRatio(true);
+		 image.setFitHeight(200);
 		myButton bt = new myButton("",image,i);
 		bt.setOnAction(e -> bt.onClick());
 		return bt;
@@ -77,6 +79,7 @@ public class c extends Application {
 			myButtons[i] = imgButton("blank.png",i);
 			pane.add(myButtons[i],i%3,i/3);
 		}
+		 primaryStage.setTitle("c.java");
 		primaryStage.setScene(new Scene(pane));
 		System.out.println("Executing show.");
 		primaryStage.show();
