@@ -49,6 +49,7 @@ public class c extends Application {
 		 image.setFitHeight(200);
 		myButton bt = new myButton("",image,i);
 		bt.setOnAction(e -> bt.onClick());
+		//bt.setOnAction(e -> b = 777);
 		return bt;
 	}
 

@@ -54,7 +54,6 @@ public class j extends Application {
 		 image.setPreserveRatio(true);
 		 image.setFitHeight(200);
 		myButton bt = new myButton("",image,i);
-		//bt.setOnAction(e -> {bt.onClick();try{out.writeInt(888);}catch(IOException ex){System.out.println("Spaghetti.");}});
 		bt.setOnAction(e -> bt.onClick());
 		return bt;
 	}
@@ -64,6 +63,7 @@ public class j extends Application {
 	void refreshBoard(){
 		for (int i=0;i<9;++i)
 		{
+			int I = i+1;
 			int tmp = 1;
 			for (int j=0;j<i;++j)
 				tmp *= 3;
@@ -110,11 +110,21 @@ public class j extends Application {
 					yourTurn = (yourTurn || tmp != b); //TMHHW
 					if (b > tmp) // DON'T TOUCH THIS. 
 						yourTurn = false; // DON'T TOUCH THIS. 
-					if (tmp > b) // Switch for ternary operator. 
+					//b = (tmp > b)? tmp : b;
+					if (tmp > b)
 						b = tmp;
 					refreshBoard();
+					
+
 					out.writeInt(b);
 					System.out.println(b);
+					/*
+					if (b == 13 || b == 13*27 || b == 13*27*27  ||  b == 757 || b == 757*3 || b == 757*3*3  ||  b == 1+81+(729*9) || b == 9+81+729)
+					{
+						System.out.println("You won!");
+						System.exit(1);
+					}
+					*/
 					CheckIfWon(1);
 				}
 			}
