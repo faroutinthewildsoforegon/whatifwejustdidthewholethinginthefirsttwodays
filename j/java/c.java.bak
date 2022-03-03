@@ -16,15 +16,14 @@ public class c {
 			socket = new Socket(host, port);
 			in = new DataInputStream(socket.getInputStream());
 			out = new DataOutputStream(socket.getOutputStream());
-				//Scanner inp = new Scanner(System.in);
+			Scanner inp = new Scanner(System.in);
 			while (true)
 			{
-				out.writeInt(7);
-				System.out.println(in.readInt());
+				out.writeInt(inp.nextInt());
+				int tmp = in.readInt();
+				//System.out.println(in.readInt());
+				System.out.println(tmp);
 			}
-					//out.writeInt(inp.nextInt());
-			//	out.writeInt(7);
-			//	System.out.println(in.readInt());
 		}
 		catch(IOException ex){
 			System.out.println("Error.");
