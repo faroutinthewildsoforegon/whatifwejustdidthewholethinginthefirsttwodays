@@ -2,11 +2,18 @@ package com.example.tictactoe_v3;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -142,6 +149,8 @@ public class PlayerVsAIController {
                     topLeft.setGraphic(tLeft);
 
                     board[0][0] = Seed.X;
+                    try{ onEndGame(); }
+                    catch(Exception e){}
                 }
                 else{
                     tLeft.setImage(oImage);
@@ -298,9 +307,19 @@ public class PlayerVsAIController {
                     board[2][2] = Seed.O;
                 }
                 break;
-
         }
+    }
 
+    public void onEndGame() throws IOException{
+        if(checkForWin(player)) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("EndgameStatus.fxml"));
+            Parent root = (Parent) loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Winner!");
+            stage.show();
+        }
     }
 
     public Boolean isMoveValid(String moveLocation){
@@ -350,7 +369,6 @@ public class PlayerVsAIController {
                 // diagonal bottom left to top right
                 board[2][0] == winningSeed && board[1][1] == winningSeed && board[0][2] == winningSeed
                 );
-
     }
 
     public void initBoard(){
