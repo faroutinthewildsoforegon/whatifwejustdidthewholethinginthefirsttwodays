@@ -1,0 +1,18 @@
+.button{
+    -fx-padding: 5;
+    -fx-background: #727272;
+    -fx-background-color: #607d8b;
+    -fx-font: 16px "Arial";
+    -fx-text-fill: #212121;
+    -fx-effect: dropshadow(one-pass-box, black, 14, 0.0, 6, 0);
+    -fx-background-radius: 12;
+}
+
+.button:hover{
+    -fx-background-color: rgba(115, 107, 221, 1);
+    -fx-color: rgb(246, 246, 44);
+}
+
+.transparentStage{
+    -fx-background-color: rgba(0,0,0,.5);
+}
