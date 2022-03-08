@@ -53,7 +53,12 @@ public class MainMenuController {
     }
 
     public void onOnlineButtonPressed(ActionEvent event){
-        welcomeLabel.setText("Online is not ready");
+        if(!Main.DELETEME)
+            System.out.println("Computer goes first");
+        else
+            System.out.println("Playersssss goes first");
+
+        Main.DELETEME = !Main.DELETEME;
     }
 
 

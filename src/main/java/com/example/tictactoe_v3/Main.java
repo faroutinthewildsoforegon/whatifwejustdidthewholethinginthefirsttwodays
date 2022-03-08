@@ -14,6 +14,7 @@ public class Main extends Application {
 
     public static Stage GLOBAL_MENU_STAGE;
     public static Stage CURRENT_STAGE;
+    public static boolean DELETEME = true; // what the fuck is alex doing
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));

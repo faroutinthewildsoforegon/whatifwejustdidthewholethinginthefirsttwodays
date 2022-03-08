@@ -81,7 +81,9 @@ public class PlayerVsAIController {
         initBoard();
         printBoardToConsole();
         updateStatusLabel(player);
-        dumbMoveComputer();
+        if(Main.DELETEME) {
+            dumbMoveComputer();
+        }
         player = !player;
     }
 
@@ -179,7 +181,7 @@ public class PlayerVsAIController {
 
     public int[] findOptimalPlay(){
         // TODO: replace with min
-        int bestVal = -1000;
+        int bestVal = Integer.MIN_VALUE;
         int[] bestMove= {-1, -1};
 
         for(int i = 0; i < 3; i++){
@@ -266,21 +268,28 @@ public class PlayerVsAIController {
     public int minimax(int depth, Boolean isMax){
         System.out.println("Depth is: " + depth);
         int score = evaluate();
-
-        // if maximizer has won return score
-        if(score == 10)
-            return score;
-        // if minimizer has lost return score
-        if(score == -10)
-            return score;
-
+        if(depth == 0){         // if maximizer has won return score
+            if (score == 10)
+                return 1000;
+            // if minimizer has lost return score
+            if (score == -10)
+                return -1000;
+        }
+        else{
+            // if maximizer has won return score
+            if (score == 10)
+                return score;
+            // if minimizer has lost return score
+            if (score == -10)
+                return score;
+        }
         // if no more moves and no winner, return 0 for draw
         if(checkForDraw() == true){
             return 0;
         }
 
         if(isMax){
-            int best = 0;
+            int best = Integer.MIN_VALUE;
 
             // traverse all cells
             for(int i = 0; i < 3; i++){
@@ -300,7 +309,7 @@ public class PlayerVsAIController {
         }
         // otherwise, it's the minimizer's turn
         else{
-            int best = 0;
+            int best = Integer.MAX_VALUE;
 
             // traverse all cells
             for(int i = 0; i < 3; i++){

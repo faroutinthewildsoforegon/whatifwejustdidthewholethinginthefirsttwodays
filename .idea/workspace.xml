@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3169beec-9ce6-4888-a3e8-880e1fdbb063" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/DriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/DriverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/LocalPlaySettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/LocalPlaySettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/PlayerVsAIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/PlayerVsAIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/TwoPlayerLocalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/TwoPlayerLocalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe_v3/PlayerVsAI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe_v3/PlayerVsAI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe_v3/TwoPlayerLocal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe_v3/TwoPlayerLocal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe_v3/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe_v3/MainMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
