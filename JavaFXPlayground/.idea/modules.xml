@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/tictactoe_v3.iml" filepath="$PROJECT_DIR$/tictactoe_v3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaFXPlayground.iml" filepath="$PROJECT_DIR$/JavaFXPlayground.iml" />
     </modules>
   </component>
 </project>
