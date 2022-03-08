@@ -13,7 +13,7 @@ public class Main extends Application {
     public static int MAINMENU_WINDOW_HEIGHT= 490;
 
     public static Stage GLOBAL_MENU_STAGE;
-
+    public static Stage CURRENT_STAGE;
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));

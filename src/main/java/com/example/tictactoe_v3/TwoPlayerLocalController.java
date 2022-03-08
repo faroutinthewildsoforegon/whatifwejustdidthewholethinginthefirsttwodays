@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,6 +38,8 @@ public class TwoPlayerLocalController {
     Button printBoardButton = new Button();
     @FXML
     Label statusLabel = new Label();
+    @FXML
+    Button exitButton = new Button();
 
     Seed[][] board = new Seed[3][3];                // The underlying board, *see Seed.java*
     Boolean player = true;                          // true = player 1, x . false = player 2, o
@@ -106,57 +109,11 @@ public class TwoPlayerLocalController {
 
 
     }
-// Piece of min-max     returns point value of a moveset
-/*
-    public int evaluate(Seed[][] b){
-        // Checking for Rows for X or O victory.
-        for (int row = 0; row < 3; row++)
-        {
-            if (b[row][0] == b[row][1] &&
-                    b[row][1] == b[row][2])
-            {
-                if (b[row][0] == player)
-                    return +10;
-                else if (b[row][0] == opponent)
-                    return -10;
-            }
-        }
 
-        // Checking for Columns for X or O victory.
-        for (int col = 0; col < 3; col++)
-        {
-            if (b[0][col] == b[1][col] &&
-                    b[1][col] == b[2][col])
-            {
-                if (b[0][col] == player)
-                    return +10;
-
-                else if (b[0][col] == opponent)
-                    return -10;
-            }
-        }
-
-        // Checking for Diagonals for X or O victory.
-        if (b[0][0] == b[1][1] && b[1][1] == b[2][2])
-        {
-            if (b[0][0] == player)
-                return +10;
-            else if (b[0][0] == opponent)
-                return -10;
-        }
-
-        if (b[0][2] == b[1][1] && b[1][1] == b[2][0])
-        {
-            if (b[0][2] == player)
-                return +10;
-            else if (b[0][2] == opponent)
-                return -10;
-        }
-
-        // Else if none of them have won then return 0
-        return 0;
+    public void onExitButtonPress(ActionEvent event) throws IOException{
+        Main.CURRENT_STAGE.close();
+        Main.GLOBAL_MENU_STAGE.show();
     }
-*/
     // Converts the info given from event into shorter usable string
     // eg. input: Button[id=midRight, styleClass=button]'' -> output: midRight
     public String getFxIDFromButton(String eventString){

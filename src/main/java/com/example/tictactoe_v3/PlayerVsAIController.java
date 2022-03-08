@@ -43,6 +43,8 @@ public class PlayerVsAIController {
     Button printBoardButton = new Button();
     @FXML
     Label statusLabel = new Label();
+    @FXML
+    Button exitButton = new Button();
 
     Seed[][] board = new Seed[3][3];
     Boolean player = true;
@@ -142,6 +144,11 @@ public class PlayerVsAIController {
         }
 
 
+    }
+
+    public void onExitButtonPressed(ActionEvent event)throws IOException{
+        Main.CURRENT_STAGE.close();
+        Main.GLOBAL_MENU_STAGE.show();
     }
 
 

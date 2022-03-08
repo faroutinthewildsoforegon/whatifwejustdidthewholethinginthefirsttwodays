@@ -8,7 +8,5 @@ public class DriverController {
     Button localPlayButton = new Button();
     @FXML
     Button onlinePlayButton = new Button();
-    @FXML
-    Label 
 
 }
