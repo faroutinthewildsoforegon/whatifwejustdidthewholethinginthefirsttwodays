@@ -22,7 +22,6 @@
       <Button fx:id="botCent" layoutX="257.0" layoutY="346.0" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="100.0" prefWidth="100.0" />
       <Button fx:id="botRight" layoutX="385.0" layoutY="340.0" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="100.0" prefWidth="100.0" />
       <Button fx:id="startButton" layoutX="74.0" layoutY="501.0" mnemonicParsing="false" onMouseClicked="#startGame" prefHeight="25.0" prefWidth="91.0" text="Start Game" />
-      <Button fx:id="printBoardButton" layoutX="205.0" layoutY="501.0" mnemonicParsing="false" onMouseClicked="#printBoardToConsole" text="Print Board" />
       <Label fx:id="statusLabel" layoutX="106.0" layoutY="39.0" text="No game in progress (press 'Start Game')" />
    </children>
 </AnchorPane>
