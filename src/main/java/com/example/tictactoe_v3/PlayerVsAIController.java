@@ -60,14 +60,27 @@ public class PlayerVsAIController {
     ImageView bCent = new ImageView();
     ImageView bRight = new ImageView();
 
+    //for testing:
+    Seed tboard[][] =
+            {
+                    { Seed.X, Seed.EMPTY, Seed.O},
+                    { Seed.EMPTY, Seed.X, Seed.EMPTY},
+                    { Seed.O, Seed.O, Seed.O}
+            };
+
 
 
     public void startGame(){
+        // for debugging
+        System.out.println("Board value is: " + evaluate());
+
         gameRunning = true;
-        player = true;
+        player = false;
         initBoard();
         printBoardToConsole();
         updateStatusLabel(player);
+        dumbMoveComputer();
+        player = !player;
     }
 
 
@@ -81,26 +94,47 @@ public class PlayerVsAIController {
 
                 makeMove(player, buttonFxIdStr);
                 // at the end of a successful turn, the player changes
+
+                // check if move results in win
+                if(gameRunning && checkForWin(player)){
+                    System.out.println("Player" + (player ? " 1 " : " 2 ") + "has won!" );
+                    statusLabel.setText("Player" + (player ? " 1 " : " Computer ") + "has won!" );
+                    gameRunning = false;
+                }
+
+                // check if results in draw
+                if(gameRunning && checkForDraw()){
+                    statusLabel.setText("It's a draw!");
+                    System.out.println("It's a draw!");
+                    gameRunning = false;
+                }
+
+                // change player
                 player = !player;
                 updateStatusLabel(player);
-            }
-            else {
-                System.out.println("sorry that move is not valid.");
+
+                if(gameRunning){
+                    dumbMoveComputer();
+                    // check if move results in win
+                    if(gameRunning && checkForWin(player)){
+                        System.out.println("Player" + (player ? " 1 " : " 2 ") + "has won!" );
+                        statusLabel.setText("Player" + (player ? " 1 " : " Computer ") + "has won!" );
+                        gameRunning = false;
+                    }
+
+                    // check if results in draw
+                    if(gameRunning && checkForDraw()){
+                        statusLabel.setText("It's a draw!");
+                        System.out.println("It's a draw!");
+                        gameRunning = false;
+                    }
+
+                    player = !player;
+                }
             }
 
-            // player has to be negated while being passed because it's logically flipped after a move is entered.
-            // note: this could be changed to go inside the player move before player is changed.
-            if(gameRunning && checkForWin(!player)){
-                System.out.println("Player" + (!player ? " 1 " : " 2 ") + "has won!" );
-                statusLabel.setText("Player" + (!player ? " 1 " : " 2 ") + "has won!" );
-                gameRunning = false;
-            }
 
-            if(gameRunning && checkForDraw()){
-                statusLabel.setText("It's a draw!");
-                System.out.println("It's a draw!");
-                gameRunning = false;
-            }
+
         }
         else{
             statusLabel.setText("The game must be running for a move to be entered.");
@@ -108,6 +142,175 @@ public class PlayerVsAIController {
         }
 
 
+    }
+
+
+    // plays a move from top to bottom, if a space is not occupied, the move will be taken.
+    public void dumbMoveComputer(){
+        System.out.println("Computer Move called!!");
+        /*
+        String[][] possibleMoves = {{"topLeft","midLeft","botLeft"},
+                                    {"topCent","midCent","botCent"},
+                                    {"topRight","midRight","botRight"}};
+
+        for(int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+                if(isMoveValid(possibleMoves[i][j])){
+                    makeMove(player,possibleMoves[i][j]);
+                    return;
+                }
+            }
+        }
+        */
+
+        int[] bestMove = findOptimalPlay();
+        System.out.println("The optimal move is: ");
+        System.out.println("Row:" + bestMove[0] + " Col: " + bestMove[1]);
+        makeMove(player,getMoveNameFromRowCol(bestMove[0],bestMove[1]));
+
+    }
+
+    public int[] findOptimalPlay(){
+        // TODO: replace with min
+        int bestVal = -1000;
+        int[] bestMove= {-1, -1};
+
+        for(int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+
+                // check if cell is empty
+                if(isMoveValid(i,j)){
+                    // get the name of that move; no longer necessary
+                    // String tempMov = getMoveNameFromRowCol(i,j);
+
+                    // make the move
+                    board[i][j] = Seed.O;
+
+                    // compute eval for move
+                    System.out.println("minimax eval: " + minimax(0,true));    // this currently does not return anything other than 1000.
+                    int moveVal = minimax(0,false);
+                    System.out.println("Move Val: " + moveVal);
+
+                    // undo move
+                    board[i][j] = Seed.EMPTY;
+
+                    // if the move we just checked is better, take it
+                    if(moveVal > bestVal){
+                        bestMove[0] = i;
+                        bestMove[1] = j;
+                        bestVal = moveVal;
+                    }
+
+                }
+            }
+        }
+
+        System.out.printf("The value of the best Move is : %d\n\n", bestVal);
+        return bestMove;
+    }
+
+    // returns 10 is winning board is O, and negative 10 if winning board is X, otherwise returns 0.
+    public int evaluate(){
+
+        // checking rows for X or 0 victory
+        for(int i = 0; i < 3; i++){
+            if(board[i][0] == board[i][1] &&
+               board[i][1] == board[i][2]){
+                if(board[i][0] == Seed.O)
+                    return 10;
+                else if(board[i][0] == Seed.X)
+                    return -10;
+            }
+        }
+
+        // checking cols for X or O victory
+        for(int j = 0; j < 3; j++){
+            if(board[0][j] == board[1][j] &&
+               board[1][j] == board[2][j]){
+                if (board[0][j] == Seed.O)
+                    return 10;
+                else if(board[0][j] == Seed.X)
+                    return -10;
+            }
+        }
+
+        // checking diagonals
+        // Checking for Diagonals for X or O victory.
+        if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
+        {
+            if (board[0][0] == Seed.O)
+                return +10;
+            else if (board[0][0] == Seed.X)
+                return -10;
+        }
+
+        if (board[0][2] == board[1][1] && board[1][1] == board[2][0])
+        {
+            if (board[0][2] == Seed.O)
+                return +10;
+            else if (board[0][2] == Seed.X)
+                return -10;
+        }
+
+        // else if none of them have won return 0
+        return 0;
+    }
+
+    public int minimax(int depth, Boolean isMax){
+        System.out.println("Depth is: " + depth);
+        int score = evaluate();
+
+        // if maximizer has won return score
+        if(score == 10)
+            return score;
+        // if minimizer has lost return score
+        if(score == -10)
+            return score;
+
+        // if no more moves and no winner, return 0 for draw
+        if(checkForDraw() == true){
+            return 0;
+        }
+
+        if(isMax){
+            int best = 0;
+
+            // traverse all cells
+            for(int i = 0; i < 3; i++){
+                for (int j = 0; j < 3; j++){
+                    // check if current cell is empty
+                    if(board[i][j] == Seed.EMPTY){
+                        // if so make the move
+                        board[i][j] = Seed.O;
+                        // choose max value from recursive call
+                        best = Math.max(best,minimax(depth + 1, !isMax));
+                        // undo move made
+                        board[i][j] = Seed.EMPTY;
+                    }
+                }
+            }
+            return best;
+        }
+        // otherwise, it's the minimizer's turn
+        else{
+            int best = 0;
+
+            // traverse all cells
+            for(int i = 0; i < 3; i++){
+                for (int j = 0; j < 3; j++){
+                    // check if current cell is empty
+                    if(board[i][j] == Seed.EMPTY){
+                        // if so make the move
+                        board[i][j] = Seed.X;
+                        // choose max value from recursive call
+                        best = Math.min(best,minimax(depth + 1, !isMax));
+                        // undo move made
+                        board[i][j] = Seed.EMPTY;
+                    }
+                }
+            }
+            return best;
+        }
     }
 
     public String getFxIDFromButton(String eventString){
@@ -138,7 +341,23 @@ public class PlayerVsAIController {
         return coordinates;
     }
 
+    public String getMoveNameFromRowCol(int row, int col){
+
+        if(row == 0 && col == 0){return "topLeft";};
+        if(row == 0 && col == 1){return "topCent";};
+        if(row == 0 && col == 2){return "topRight";};
+        if(row == 1 && col == 0){return "midLeft";};
+        if(row == 1 && col == 1){return "midCent";};
+        if(row == 1 && col == 2){return "midRight";};
+        if(row == 2 && col == 0){return "botLeft";};
+        if(row == 2 && col == 1){return "botCent";};
+        if(row == 2 && col == 2){return "botRight";};
+        return "no possible move";
+
+    }
+
     public void makeMove(Boolean player,String fxId){
+
 
         switch (fxId){
             case "topLeft":
@@ -335,6 +554,18 @@ public class PlayerVsAIController {
         }
     }
 
+    // This version just takes the coordinates if that's what you need
+    public Boolean isMoveValid(int row, int col){
+
+        if (board[row][col] == Seed.EMPTY){
+            System.out.println("["+row+"],["+col+"] is valid!");
+            return true;
+        } else{
+            System.out.println("["+row+"],["+col+"] is invalid and occupied by " + board[row][col]);
+            return false;
+        }
+    }
+
     public Boolean checkForDraw(){
         for(int i = 0; i < 3; i++ ){
             for(int j = 0; j < 3; j++){
@@ -404,7 +635,7 @@ public class PlayerVsAIController {
             statusLabel.setText("Player 1's turn");
         }
         else {
-            statusLabel.setText("Player 2's turn");
+            statusLabel.setText("Player's turn");
         }
 
     }
