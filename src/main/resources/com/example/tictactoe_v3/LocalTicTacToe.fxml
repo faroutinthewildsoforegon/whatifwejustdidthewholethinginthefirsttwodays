@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe_v3.PlayerVsAIController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6cf5b7" height="400.0" layoutX="100.0" layoutY="49.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="233.0" layoutY="49.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="366.0" layoutY="49.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="100.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="100.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+      <ImageView fx:id="topLeft" fitHeight="100.0" fitWidth="100.0" layoutX="117.0" layoutY="66.0" onMouseClicked="#onTopLeftImageClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="topCent" fitHeight="100.0" fitWidth="100.0" layoutX="256.0" layoutY="66.0" onMouseClicked="#onTopCentImageClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="topRight" fitHeight="100.0" fitWidth="100.0" layoutX="387.0" layoutY="66.0" onMouseClicked="#onTopRightImageClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="midLeft" fitHeight="100.0" fitWidth="100.0" layoutX="117.0" layoutY="200.0" onMouseClicked="#onMidLeftImageClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="midCent" fitHeight="100.0" fitWidth="100.0" layoutX="256.0" layoutY="200.0" onMouseClicked="#onMidCentImageClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="midRight" fitHeight="100.0" fitWidth="100.0" layoutX="387.0" layoutY="200.0" onMouseClicked="#onMidRightImageClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="botLeft" fitHeight="100.0" fitWidth="100.0" layoutX="117.0" layoutY="336.0" onMouseClicked="#onBotLeftImageClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="botCent" fitHeight="100.0" fitWidth="100.0" layoutX="256.0" layoutY="336.0" onMouseClicked="#onBotCentImageClicked" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="botRight" fitHeight="100.0" fitWidth="100.0" layoutX="387.0" layoutY="336.0" onMouseClicked="#onBotRightImageClicked" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="playerTurnLabel" layoutX="86.0" layoutY="21.0" />
+      <Button fx:id="returnButton" layoutX="35.0" layoutY="552.0" mnemonicParsing="false" onAction="#onReturnButtonPressed" text="Return to Main Menu" />
+      <Label fx:id="playerMoveLabel" layoutX="100.0" layoutY="21.0" text="player 1's turn" />
+   </children>
+</AnchorPane>

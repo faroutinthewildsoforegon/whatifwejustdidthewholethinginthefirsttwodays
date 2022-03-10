@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: transparent;" stylesheets="@ButtonStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe_v3.LocalPlaySettingsController">
+   <children>
+      <Button fx:id="SinglePlayerButton" mnemonicParsing="false" onAction="#onSinglePlayerButtonPressed" prefHeight="90.0" prefWidth="295.0" stylesheets="@ButtonStyle.css" text="Single Player (Against AI)" />
+      <Button fx:id="TwoPlayerButton" layoutY="102.0" mnemonicParsing="false" onAction="#onTwoPlayerButtonPressed" prefHeight="90.0" prefWidth="295.0" stylesheets="@ButtonStyle.css" text="Two Player" />
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
