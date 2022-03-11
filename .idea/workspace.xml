@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3169beec-9ce6-4888-a3e8-880e1fdbb063" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/StageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/PlayerVsAIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/PlayerVsAIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/sceneController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/StageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe_v3/StageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe_v3/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe_v3/Game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/tictactoe_v3/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/tictactoe_v3/Game.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/tictactoe_v3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/tictactoe_v3/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/tictactoe_v3/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/tictactoe_v3/MainMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/tictactoe_v3/PlayerVsAIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/tictactoe_v3/PlayerVsAIController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +61,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SceneBuilder.lnk" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -73,6 +71,8 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.tictactoe_v3.Main" />
       <module name="tictactoe_v3" />
       <extension name="coverage">
@@ -98,6 +98,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Test" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />

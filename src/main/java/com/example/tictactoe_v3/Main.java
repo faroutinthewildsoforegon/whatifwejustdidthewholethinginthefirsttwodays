@@ -14,16 +14,24 @@ public class Main extends Application {
 
     public static Stage GLOBAL_MENU_STAGE;
     public static Stage CURRENT_STAGE;
+
+    public static StageController STAGE = new StageController();
     public static boolean DELETEME = true; // what the fuck is alex doing
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-        Scene scene = new Scene(root, Main.MAINMENU_WINDOW_WIDTH, Main.MAINMENU_WINDOW_HEIGHT);
-        stage.setTitle("Tic Tac Toe!");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        GLOBAL_MENU_STAGE = stage;
-        GLOBAL_MENU_STAGE.show();
+//        Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+//        Scene scene = new Scene(root, Main.MAINMENU_WINDOW_WIDTH, Main.MAINMENU_WINDOW_HEIGHT);
+//        stage.setTitle("Tic Tac Toe!");
+//        stage.setScene(scene);
+//        stage.setResizable(false);
+//        GLOBAL_MENU_STAGE = stage;
+//        GLOBAL_MENU_STAGE.show();
+
+        STAGE.initialize(stage);
+        STAGE.show(0);
+
+        /* INITIALIZE OTHER STAGES HERE */
+        STAGE.addStage("Game.fxml", 800, 700);
     }
 
     public static void main(String[] args) { launch(); }

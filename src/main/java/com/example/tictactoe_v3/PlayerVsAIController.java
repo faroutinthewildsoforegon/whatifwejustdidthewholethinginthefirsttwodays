@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class PlayerVsAIController {
 
+public class PlayerVsAIController{
     @FXML
     Button topLeft = new Button();
     @FXML
@@ -48,14 +48,22 @@ public class PlayerVsAIController {
     @FXML
     Button returnToMainButton = new Button();
     public void returnToMainButtonPressed(ActionEvent event) throws IOException{
-        Main.CURRENT_STAGE.close();
-        Main.GLOBAL_MENU_STAGE.show();
+        Main.STAGE.hide(1);
+        Main.STAGE.show(0);
     }
     @FXML
     Button restartButton = new Button();
     public void restartButtonPressed(ActionEvent event){
 
     }
+    @FXML
+    public static Label player1Name = new Label();
+    @FXML
+    public static Label player2Name = new Label();
+    @FXML
+    public static Label player2Score = new Label();
+    @FXML
+    public static Label player1Score = new Label();
 
     Seed[][] board = new Seed[3][3];
     Boolean player = true;
@@ -393,8 +401,6 @@ public class PlayerVsAIController {
                     topLeft.setGraphic(tLeft);
 
                     board[0][0] = Seed.X;
-                    try{ onEndGame(); }
-                    catch(Exception e){}
                 }
                 else{
                     tLeft.setImage(oImage);

@@ -104,12 +104,12 @@
                   <Blend mode="MULTIPLY" opacity="0.78" />
                </effect>
             </ImageView>
-            <Label fx:id="player1Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" style="-fx-alignment: CENTER;" text="Player 1" textAlignment="CENTER">
+            <Label fx:id="player1Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" wrapText="true">
                <font>
                   <Font name="Gill Sans Ultra Bold" size="21.0" />
                </font>
             </Label>
-            <Label fx:id="player1Score" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" style="-fx-alignment: CENTER;" text="0" textAlignment="CENTER">
+            <Label fx:id="player1Score" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" style="-fx-alignment: CENTER;" textAlignment="CENTER">
                <font>
                   <Font size="65.0" />
                </font>
@@ -126,12 +126,12 @@
                   <Blend mode="MULTIPLY" opacity="0.78" />
                </effect>
             </ImageView>
-            <Label fx:id="player2Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" style="-fx-alignment: CENTER;" text="AI" textAlignment="CENTER">
+            <Label fx:id="player2Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" textAlignment="CENTER">
                <font>
                   <Font name="Gill Sans Ultra Bold" size="21.0" />
                </font>
             </Label>
-            <Label fx:id="player2Score" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" style="-fx-alignment: CENTER;" text="0" textAlignment="CENTER">
+            <Label fx:id="player2Score" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" style="-fx-alignment: CENTER;" textAlignment="CENTER">
                <font>
                   <Font size="65.0" />
                </font>

@@ -16,6 +16,8 @@ import javafx.stage.StageStyle;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import static com.example.tictactoe_v3.Main.STAGE;
+
 public class MainMenuController {
 
     /* New Stuff that I hope works */
@@ -58,19 +60,30 @@ public class MainMenuController {
         againstAIButton.setVisible((!againstAIButton.isVisible()));
     }
     public void onAgainstPlayerButtonPressed(ActionEvent event) throws IOException{
-
+        System.out.println("onAgainstPlayerButtonPressed");
     }
 
     public void onAgainstAIButtonPressed(ActionEvent event) throws IOException{
         System.out.println("onAgainstAIButton has been pressed");
-        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
-        Main.CURRENT_STAGE = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root,800,700);
-        Main.CURRENT_STAGE.setTitle("Tic Tac Toe! (Local)");
-        Main.CURRENT_STAGE.setScene(scene);
-        Main.CURRENT_STAGE.setResizable(false);
-        Main.GLOBAL_MENU_STAGE.hide();
-        Main.CURRENT_STAGE.show();
+
+
+        PlayerVsAIController.player1Name.setText("PLAYER");
+        PlayerVsAIController.player2Name.setText("AI");
+        PlayerVsAIController.player1Score.setText("0");
+        PlayerVsAIController.player2Score.setText("0");
+
+        STAGE.stageList.get(1).setTitle("Local Play (Against AI)");
+        STAGE.hide(0);
+        STAGE.show(1);
+
+//        Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+//        Main.CURRENT_STAGE = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        scene = new Scene(root,800,700);
+//        Main.CURRENT_STAGE.setTitle("Tic Tac Toe! (Local)");
+//        Main.CURRENT_STAGE.setScene(scene);
+//        Main.CURRENT_STAGE.setResizable(false);
+//        Main.GLOBAL_MENU_STAGE.hide();
+//        Main.CURRENT_STAGE.show();
     }
 
     public void onOnlineButtonPressed(ActionEvent event){
