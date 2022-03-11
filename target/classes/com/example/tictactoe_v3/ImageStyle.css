@@ -1,0 +1,5 @@
+.borderedImage{
+	-fx-padding: 20;
+	-fx-background-color: black;
+	-fx-background-radius: 15;
+}

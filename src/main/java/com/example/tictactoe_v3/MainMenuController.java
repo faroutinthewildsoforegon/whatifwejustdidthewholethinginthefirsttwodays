@@ -30,6 +30,10 @@ public class MainMenuController {
     Button playOnlineButton = new Button();
     @FXML
     Label welcomeLabel = new Label();
+    @FXML
+    Button againstPlayerButton = new Button();
+    @FXML
+    Button againstAIButton = new Button();
 
     public void onLocalButtonPressed(ActionEvent event)throws IOException{
         /*
@@ -42,14 +46,24 @@ public class MainMenuController {
         stage.show();
          */
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LocalPlaySettings.fxml"));
-        Parent root = (Parent)loader.load();
-        scene = new Scene(root);
-        stage = new Stage();
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("title");
-        stage.show();
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("LocalPlaySettings.fxml"));
+//        Parent root = (Parent)loader.load();
+//        scene = new Scene(root);
+//        stage = new Stage();
+//        stage.setScene(scene);
+//        stage.initStyle(StageStyle.TRANSPARENT);
+//        stage.setTitle("title");
+//        stage.show();
+
+        againstPlayerButton.setVisible(!againstPlayerButton.isVisible());
+        againstAIButton.setVisible((!againstAIButton.isVisible()));
+    }
+    public void onAgainstPlayerButtonPressed(ActionEvent event){
+
+    }
+
+    public void onAgainstAIButtonPressed(ActionEvent event){
+
     }
 
     public void onOnlineButtonPressed(ActionEvent event){
