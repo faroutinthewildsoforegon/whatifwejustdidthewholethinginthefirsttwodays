@@ -18,17 +18,13 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-        //FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainMenu.fxml"));
-        //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         Scene scene = new Scene(root, Main.MAINMENU_WINDOW_WIDTH, Main.MAINMENU_WINDOW_HEIGHT);
         stage.setTitle("Tic Tac Toe!");
         stage.setScene(scene);
         stage.setResizable(false);
         GLOBAL_MENU_STAGE = stage;
-        stage.show();
+        GLOBAL_MENU_STAGE.show();
     }
 
-    public static void main(String[] args) {
-        launch();
-    }
+    public static void main(String[] args) { launch(); }
 }

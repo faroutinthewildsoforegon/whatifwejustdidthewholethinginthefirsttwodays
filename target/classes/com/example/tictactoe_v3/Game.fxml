@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe_v3.PlayerVsAIController">
    <children>
       <ImageView fitHeight="700.0" fitWidth="800.0" pickOnBounds="true">
          <image>
@@ -126,7 +126,7 @@
                   <Blend mode="MULTIPLY" opacity="0.78" />
                </effect>
             </ImageView>
-            <Label fx:id="player2Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" style="-fx-alignment: CENTER;" text="Player 2" textAlignment="CENTER">
+            <Label fx:id="player2Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" style="-fx-alignment: CENTER;" text="AI" textAlignment="CENTER">
                <font>
                   <Font name="Gill Sans Ultra Bold" size="21.0" />
                </font>
@@ -138,8 +138,8 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="restartButton" layoutX="245.0" layoutY="506.0" mnemonicParsing="false" onAction="#onPressed" prefHeight="54.0" prefWidth="320.0" stylesheets="@ButtonStyle.css" text="Button" />
-      <Button fx:id="restartButton1" layoutX="245.0" layoutY="597.0" mnemonicParsing="false" onAction="#onPressed" prefHeight="54.0" prefWidth="320.0" stylesheets="@ButtonStyle.css" text="Button" />
+      <Button fx:id="restartButton" layoutX="245.0" layoutY="506.0" mnemonicParsing="false" onAction="#restartButtonPressed" prefHeight="54.0" prefWidth="320.0" stylesheets="@ButtonStyle.css" text="Restart" />
+      <Button fx:id="returnToMainButton" layoutX="245.0" layoutY="597.0" mnemonicParsing="false" onAction="#returnToMainButtonPressed" prefHeight="54.0" prefWidth="320.0" stylesheets="@ButtonStyle.css" text="Return To Main Menu" />
 
    </children>
 </AnchorPane>

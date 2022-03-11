@@ -45,10 +45,21 @@ public class PlayerVsAIController {
     Label statusLabel = new Label();
     @FXML
     Button exitButton = new Button();
+    @FXML
+    Button returnToMainButton = new Button();
+    public void returnToMainButtonPressed(ActionEvent event) throws IOException{
+        Main.CURRENT_STAGE.close();
+        Main.GLOBAL_MENU_STAGE.show();
+    }
+    @FXML
+    Button restartButton = new Button();
+    public void restartButtonPressed(ActionEvent event){
+
+    }
 
     Seed[][] board = new Seed[3][3];
     Boolean player = true;
-    Boolean gameRunning = false;
+    Boolean gameRunning = true;
     Image xImage = new Image(getClass().getResourceAsStream("x2.png"));
     Image oImage = new Image(getClass().getResourceAsStream("o2.png"));
 
@@ -69,8 +80,6 @@ public class PlayerVsAIController {
                     { Seed.EMPTY, Seed.X, Seed.EMPTY},
                     { Seed.O, Seed.O, Seed.O}
             };
-
-
 
     public void startGame(){
         // for debugging
