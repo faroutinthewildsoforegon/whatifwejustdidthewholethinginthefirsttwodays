@@ -14,7 +14,6 @@ public class StageController {
 
     public static ArrayList<Stage> stageList;
 
-
     public static int MAINMENU_WINDOW_WIDTH = 670;
     public static int MAINMENU_WINDOW_HEIGHT= 490;
 

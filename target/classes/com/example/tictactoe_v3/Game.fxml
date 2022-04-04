@@ -96,7 +96,7 @@
       </Pane>
       <Pane layoutX="29.0" layoutY="150.0" prefHeight="200.0" prefWidth="140.0">
          <children>
-            <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true" style="-FX-RADIUS: 20;">
+            <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true">
                <image>
                   <Image url="@paper.jpg" />
                </image>
@@ -104,12 +104,12 @@
                   <Blend mode="MULTIPLY" opacity="0.78" />
                </effect>
             </ImageView>
-            <Label fx:id="player1Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" wrapText="true">
+            <Label fx:id="player1Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" text="test" wrapText="true">
                <font>
-                  <Font name="Gill Sans Ultra Bold" size="21.0" />
+                  <Font name="Courier New" size="21.0" />
                </font>
             </Label>
-            <Label fx:id="player1Score" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" style="-fx-alignment: CENTER;" textAlignment="CENTER">
+            <Label fx:id="player1Score" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" textAlignment="CENTER">
                <font>
                   <Font size="65.0" />
                </font>
@@ -138,8 +138,13 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="restartButton" layoutX="245.0" layoutY="506.0" mnemonicParsing="false" onAction="#restartButtonPressed" prefHeight="54.0" prefWidth="320.0" stylesheets="@ButtonStyle.css" text="Restart" />
+      <Button fx:id="restartButton" layoutX="245.0" layoutY="506.0" mnemonicParsing="false" onAction="#onRestartButtonPressed" prefHeight="54.0" prefWidth="320.0" stylesheets="@ButtonStyle.css" text="Restart" />
       <Button fx:id="returnToMainButton" layoutX="245.0" layoutY="597.0" mnemonicParsing="false" onAction="#returnToMainButtonPressed" prefHeight="54.0" prefWidth="320.0" stylesheets="@ButtonStyle.css" text="Return To Main Menu" />
+      <Label fx:id="testLabel" layoutX="637.0" layoutY="560.0" prefHeight="48.0" prefWidth="126.0" text="Label" textFill="RED">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Label>
 
    </children>
 </AnchorPane>

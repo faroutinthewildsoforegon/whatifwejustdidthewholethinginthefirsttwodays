@@ -52,12 +52,19 @@ public class PlayerVsAIController{
         Main.STAGE.show(0);
     }
     @FXML
-    Button restartButton = new Button();
-    public void restartButtonPressed(ActionEvent event){
-
+    Button onRestartButtonPressed = new Button();
+    public void onRestartButtonPressed(ActionEvent event){
+        player1Name.setText("PLAYER");
+        PlayerVsAIController.player2Name.setText("AI");
+        PlayerVsAIController.player1Score.setText("0");
+        PlayerVsAIController.player2Score.setText("0");
+        testLabel.setText("what the fuck");
+        System.out.println("I clicked the show button");
     }
     @FXML
-    public static Label player1Name = new Label();
+    public Label testLabel = new Label();
+    @FXML
+    Label player1Name = new Label();
     @FXML
     public static Label player2Name = new Label();
     @FXML
