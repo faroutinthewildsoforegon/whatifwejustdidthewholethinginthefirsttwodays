@@ -1,14 +1,18 @@
 package com.example.tictactoe_v3;
 
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main extends Application {
+    public static AtomicBoolean shutdownRequested = new AtomicBoolean();
     public static int MAINMENU_WINDOW_WIDTH = 670;
     public static int MAINMENU_WINDOW_HEIGHT= 490;
 
@@ -19,13 +23,16 @@ public class Main extends Application {
     public static boolean DELETEME = true; // what the fuck is alex doing
     @Override
     public void start(Stage stage) throws IOException {
-//        Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-//        Scene scene = new Scene(root, Main.MAINMENU_WINDOW_WIDTH, Main.MAINMENU_WINDOW_HEIGHT);
-//        stage.setTitle("Tic Tac Toe!");
-//        stage.setScene(scene);
-//        stage.setResizable(false);
-//        GLOBAL_MENU_STAGE = stage;
-//        GLOBAL_MENU_STAGE.show();
+        Thread t1 = new Thread(() -> {
+            try{
+                while(!shutdownRequested.get()) {
+                    System.out.println("Thread running");
+                    Thread.sleep(1000);
+                }
+                System.out.println("Program stopped, t1 exiting");
+            } catch(InterruptedException ex) { }
+        });
+        t1.start();
 
         STAGE.initialize(stage);
         STAGE.show(0);
@@ -35,4 +42,9 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) { launch(); }
+
+    @Override
+    public void stop(){
+        shutdownRequested.set(true);
+    }
 }

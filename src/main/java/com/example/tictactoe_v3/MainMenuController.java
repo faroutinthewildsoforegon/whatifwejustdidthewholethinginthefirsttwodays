@@ -1,5 +1,6 @@
 package com.example.tictactoe_v3;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -70,6 +71,9 @@ public class MainMenuController {
     public void onAgainstAIButtonPressed(ActionEvent event) throws IOException{
         System.out.println("onAgainstAIButton has been pressed");
 
+        PlayerVsAIController.updatedP1N = "Player";
+        PlayerVsAIController.updatedP2N = "AI";
+        PlayerVsAIController.updateFlag = true;
 
         STAGE.stageList.get(1).setTitle("Local Play (Against AI)");
         STAGE.hide(0);

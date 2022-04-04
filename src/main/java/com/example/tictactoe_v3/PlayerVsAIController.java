@@ -1,5 +1,7 @@
 package com.example.tictactoe_v3;
 
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,16 +11,27 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class PlayerVsAIController{
+
+public class PlayerVsAIController {
+
+
+
+
+
+    Task task = new Task<Void>(){
+        @Override public Void call(){
+            System.out.println("Thread started");
+            return null;
+        }
+    };
+
     @FXML
     Button topLeft = new Button();
     @FXML
@@ -54,23 +67,39 @@ public class PlayerVsAIController{
     @FXML
     Button onRestartButtonPressed = new Button();
     public void onRestartButtonPressed(ActionEvent event){
-        player1Name.setText("PLAYER");
-        PlayerVsAIController.player2Name.setText("AI");
-        PlayerVsAIController.player1Score.setText("0");
-        PlayerVsAIController.player2Score.setText("0");
-        testLabel.setText("what the fuck");
-        System.out.println("I clicked the show button");
+
     }
     @FXML
     public Label testLabel = new Label();
     @FXML
     Label player1Name = new Label();
     @FXML
-    public static Label player2Name = new Label();
+    Label player2Name = new Label();
     @FXML
-    public static Label player2Score = new Label();
+    Label player2Score = new Label();
     @FXML
-    public static Label player1Score = new Label();
+    Label player1Score = new Label();
+
+    public static boolean updateFlag = false;
+    public static String updatedP1N;
+    public static String updatedP2N;
+    public static String updatedP1S;
+    public static String updatedP2S;
+
+    Thread checkForChange = new Thread(() -> {
+        try {
+            while (!Main.shutdownRequested.get()) {
+                if(updateFlag) {
+                    player1Name.setText(updatedP1N);
+                    player2Name.setText(updatedP2N);
+                    player1Score.setText("0");
+                    player2Score.setText("0");
+                }
+                Thread.sleep(1000);
+            }
+        }catch(InterruptedException ex) {}
+    });
+    checkForChange.start();
 
     Seed[][] board = new Seed[3][3];
     Boolean player = true;
