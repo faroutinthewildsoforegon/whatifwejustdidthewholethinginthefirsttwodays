@@ -70,13 +70,10 @@ public class MainMenuController {
     public void onAgainstAIButtonPressed(ActionEvent event) throws IOException{
         System.out.println("onAgainstAIButton has been pressed");
 
-<<<<<<< HEAD
         Main.dtt();
-=======
         PlayerVsAIController.updatedP1N = "Player";
         PlayerVsAIController.updatedP2N = "AI";
         PlayerVsAIController.updateFlag = true;
->>>>>>> 6bc365a420b49a0474a5b024d81c9e871e09ceb7
 
         STAGE.stageList.get(1).setTitle("Local Play (Against AI)");
         STAGE.hide(0);

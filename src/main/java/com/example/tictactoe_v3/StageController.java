@@ -46,7 +46,7 @@ public class StageController {
     }
 
     public static void refreshStage(int index){
-        getStage(index).refresh();
+        //getStage(index).refresh();
     }
 
     public void show(int sceneIndex){
