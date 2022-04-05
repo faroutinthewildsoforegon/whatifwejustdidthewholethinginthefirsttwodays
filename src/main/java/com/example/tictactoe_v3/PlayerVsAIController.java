@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class PlayerVsAIController{
     @FXML
     Button topLeft = new Button();
@@ -55,22 +54,23 @@ public class PlayerVsAIController{
     Button onRestartButtonPressed = new Button();
     public void onRestartButtonPressed(ActionEvent event){
         player1Name.setText("PLAYER");
-        PlayerVsAIController.player2Name.setText("AI");
-        PlayerVsAIController.player1Score.setText("0");
-        PlayerVsAIController.player2Score.setText("0");
         testLabel.setText("what the fuck");
         System.out.println("I clicked the show button");
     }
     @FXML
     public Label testLabel = new Label();
     @FXML
-    Label player1Name = new Label();
+    public Label player1Name = new Label();
     @FXML
-    public static Label player2Name = new Label();
+    public Label player2Name = new Label();
     @FXML
-    public static Label player2Score = new Label();
+    public Label player2Score = new Label();
     @FXML
-    public static Label player1Score = new Label();
+    public Label player1Score = new Label();
+
+    public void refresh(String text){
+        testLabel.setText(text);
+    }
 
     Seed[][] board = new Seed[3][3];
     Boolean player = true;

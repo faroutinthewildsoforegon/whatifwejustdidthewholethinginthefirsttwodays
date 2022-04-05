@@ -17,6 +17,12 @@ public class Main extends Application {
 
     public static StageController STAGE = new StageController();
     public static boolean DELETEME = true; // what the fuck is alex doing
+
+    public static void dtt(){
+        StageController.refreshStage(1);
+    }
+
+    public static String s = "testmylabel";
     @Override
     public void start(Stage stage) throws IOException {
 //        Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -30,9 +36,13 @@ public class Main extends Application {
         STAGE.initialize(stage);
         STAGE.show(0);
 
+
+
         /* INITIALIZE OTHER STAGES HERE */
         STAGE.addStage("Game.fxml", 800, 700);
     }
+
+
 
     public static void main(String[] args) { launch(); }
 }

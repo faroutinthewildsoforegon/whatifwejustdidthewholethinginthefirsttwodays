@@ -45,11 +45,19 @@ public class StageController {
         }
     }
 
+    public static void refreshStage(int index){
+        getStage(index).refresh();
+    }
+
     public void show(int sceneIndex){
         stageList.get(sceneIndex).show();
     }
 
     public void hide(int sceneIndex){
         stageList.get(sceneIndex).hide();
+    }
+
+    public static Stage getStage(int index){
+        return stageList.get(index);
     }
 }
