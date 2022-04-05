@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe_v3.PlayerVsAIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe_v3.PlayerVsAIController">
    <children>
       <ImageView fitHeight="700.0" fitWidth="800.0" pickOnBounds="true">
          <image>
@@ -94,6 +94,28 @@
             </Pane>
          </children>
       </Pane>
+      <Pane layoutX="630.0" layoutY="150.0" prefHeight="200.0" prefWidth="140.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true">
+               <image>
+                  <Image url="@paper.jpg" />
+               </image>
+               <effect>
+                  <Blend mode="MULTIPLY" opacity="0.78" />
+               </effect>
+            </ImageView>
+            <Label fx:id="player2Name" alignment="CENTER" layoutX="10.0" layoutY="24.0" prefHeight="48.0" prefWidth="121.0" style="-fx-font-weight: bold;" text="AI (X)" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Courier New" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="player2Score" alignment="CENTER" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" text="0" textAlignment="CENTER">
+               <font>
+                  <Font size="65.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
       <Pane layoutX="29.0" layoutY="150.0" prefHeight="200.0" prefWidth="140.0">
          <children>
             <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true">
@@ -104,34 +126,12 @@
                   <Blend mode="MULTIPLY" opacity="0.78" />
                </effect>
             </ImageView>
-            <Label fx:id="player1Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" text="test" wrapText="true">
+            <Label fx:id="player1Name" alignment="CENTER" layoutX="10.0" layoutY="24.0" prefHeight="48.0" prefWidth="121.0" style="-fx-font-weight: bold;" text="Player 1 (O)" textAlignment="CENTER" wrapText="true">
                <font>
-                  <Font name="Courier New" size="21.0" />
+                  <Font name="Courier New" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="player1Score" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" textAlignment="CENTER">
-               <font>
-                  <Font size="65.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane layoutX="637.0" layoutY="150.0" prefHeight="200.0" prefWidth="140.0">
-         <children>
-            <ImageView fitHeight="200.0" fitWidth="140.0" pickOnBounds="true" style="-FX-RADIUS: 20;">
-               <image>
-                  <Image url="@paper.jpg" />
-               </image>
-               <effect>
-                  <Blend mode="MULTIPLY" opacity="0.78" />
-               </effect>
-            </ImageView>
-            <Label fx:id="player2Name" layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="111.0" textAlignment="CENTER">
-               <font>
-                  <Font name="Gill Sans Ultra Bold" size="21.0" />
-               </font>
-            </Label>
-            <Label fx:id="player2Score" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" style="-fx-alignment: CENTER;" textAlignment="CENTER">
+            <Label fx:id="player1Score" alignment="CENTER" layoutX="14.0" layoutY="62.0" prefHeight="100.0" prefWidth="111.0" text="0" textAlignment="CENTER">
                <font>
                   <Font size="65.0" />
                </font>
@@ -140,11 +140,6 @@
       </Pane>
       <Button fx:id="restartButton" layoutX="245.0" layoutY="506.0" mnemonicParsing="false" onAction="#onRestartButtonPressed" prefHeight="54.0" prefWidth="320.0" stylesheets="@ButtonStyle.css" text="Restart" />
       <Button fx:id="returnToMainButton" layoutX="245.0" layoutY="597.0" mnemonicParsing="false" onAction="#returnToMainButtonPressed" prefHeight="54.0" prefWidth="320.0" stylesheets="@ButtonStyle.css" text="Return To Main Menu" />
-      <Label fx:id="testLabel" layoutX="637.0" layoutY="560.0" prefHeight="48.0" prefWidth="126.0" text="Label" textFill="RED">
-         <font>
-            <Font size="42.0" />
-         </font>
-      </Label>
 
    </children>
 </AnchorPane>

@@ -1,5 +1,7 @@
 package com.example.tictactoe_v3;
 
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,15 +11,31 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+<<<<<<< HEAD
 public class PlayerVsAIController{
+=======
+
+
+public class PlayerVsAIController {
+
+
+
+
+
+    Task task = new Task<Void>(){
+        @Override public Void call(){
+            System.out.println("Thread started");
+            return null;
+        }
+    };
+
+>>>>>>> 6bc365a420b49a0474a5b024d81c9e871e09ceb7
     @FXML
     Button topLeft = new Button();
     @FXML
@@ -53,15 +71,20 @@ public class PlayerVsAIController{
     @FXML
     Button onRestartButtonPressed = new Button();
     public void onRestartButtonPressed(ActionEvent event){
+<<<<<<< HEAD
         player1Name.setText("PLAYER");
         testLabel.setText("what the fuck");
         System.out.println("I clicked the show button");
+=======
+
+>>>>>>> 6bc365a420b49a0474a5b024d81c9e871e09ceb7
     }
     @FXML
     public Label testLabel = new Label();
     @FXML
     public Label player1Name = new Label();
     @FXML
+<<<<<<< HEAD
     public Label player2Name = new Label();
     @FXML
     public Label player2Score = new Label();
@@ -71,6 +94,34 @@ public class PlayerVsAIController{
     public void refresh(String text){
         testLabel.setText(text);
     }
+=======
+    Label player2Name = new Label();
+    @FXML
+    Label player2Score = new Label();
+    @FXML
+    Label player1Score = new Label();
+
+    public static boolean updateFlag = false;
+    public static String updatedP1N;
+    public static String updatedP2N;
+    public static String updatedP1S;
+    public static String updatedP2S;
+
+    Thread checkForChange = new Thread(() -> {
+        try {
+            while (!Main.shutdownRequested.get()) {
+                if(updateFlag) {
+                    player1Name.setText(updatedP1N);
+                    player2Name.setText(updatedP2N);
+                    player1Score.setText("0");
+                    player2Score.setText("0");
+                }
+                Thread.sleep(1000);
+            }
+        }catch(InterruptedException ex) {}
+    });
+    checkForChange.start();
+>>>>>>> 6bc365a420b49a0474a5b024d81c9e871e09ceb7
 
     Seed[][] board = new Seed[3][3];
     Boolean player = true;
