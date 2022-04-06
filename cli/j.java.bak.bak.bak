@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class j{
 public static void main(String[] args){
-	ArrayList<Server> serverList = new ArrayList<>(); // We should probably do a map of threads rather than a list of threads. 
+	ArrayList<Server> serverList = new ArrayList<>();
 	while (true){
 		try (ServerSocket serverSocket = new ServerSocket(6969)){
 			Socket socket = serverSocket.accept();
@@ -21,7 +21,7 @@ public static void main(String[] args){
 }}
 
 class Server extends Thread{
-	AtomicBoolean RUNNING = new AtomicBoolean(true); // Should give up on this and find another way. 
+	AtomicBoolean RUNNING = new AtomicBoolean(true);
 	ServerSocket serverSocket;
 	Socket socket;
 	BufferedReader bufferedReader;
@@ -61,6 +61,12 @@ class Server extends Thread{
 			System.out.println("A message was sent.");
 		}
 	}
+	/*
+	void sendToAll(String in){ // Call send on all servers in the list of servers. 
+		for (var srv : lst)
+			srv.send(in);
+	}
+	*/
 	void send(String in){
 		try{
 			bufferedWriter.write(in);
