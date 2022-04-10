@@ -44,11 +44,17 @@ public class Controller extends Thread{
         while (true){
             String UI_text = client.recv();
             if (UI_text == null){
+                // Do some other stuff? ~~Alex.
                 break;
             }
-            addLabel(UI_text, vbox_messages);
+            //addLabel(UI_text, vbox_messages);
+            getMessage(UI_text);
 
         }
+    }
+
+    void getMessage(String msg){
+        addLabel(msg,vbox_messages);
     }
 
     public void addLabel(String msgFromServer, VBox vBox){
@@ -62,8 +68,9 @@ public class Controller extends Thread{
         Text text = new Text(msgFromServer);
         TextFlow textFlow = new TextFlow(text);
         if(iSentLast){
-            textFlow.setStyle("-fx-background-color: rgb(255,255,87); " +
-                    "-fx-background-radius: 20px");
+            //textFlow.setStyle("-fx-background-color: rgb(255,255,87); " +
+            textFlow.setStyle("-fx-background-color: rgb("+red+","+blue+","+green+"); " +
+                    "-fx-background-radius: 20px"); // Eric, please make the text the inverse of the background colors.  ~~Alex.
         }
         else{
             textFlow.setStyle("-fx-background-color: rgb(87,255,255); " +
@@ -85,19 +92,64 @@ public class Controller extends Thread{
 
     }
 
+    private int red = 255;
+    private int blue = 255;
+    private int green = 87;
+    void setColors(String str){
+        java.util.Scanner in = new java.util.Scanner(str);
+        try {
+            red = in.nextInt();
+            blue = in.nextInt();
+            green = in.nextInt();
+        }
+        catch(Exception e){
+            System.out.println("Invalid color input isn't the end of the world.");
+        }
+    }
 
     public void on_Button_pressed(){
+        this.sendMessage();
+    }
+
+    public void on_Enter_Pressed(){
+        this.sendMessage();
+    }
+
+    public void sendMessage(){
         iSentLast = true;
         String newMsg = tf_message.getText();
-        client.send(newMsg);
+        if (newMsg.startsWith("CLIENT:")){
+            if (newMsg.startsWith("CLIENT: DISCONNECT")) {
+                client.seppuku();
+            }
+            else if (newMsg.startsWith("CLIENT: HELP")){
+                //System.out.println("DISCONNECT, HELP, SETCOLOR, STATECOLORS");
+                getMessage("DISCONNECT, HELP, SETCOLOR, STATECOLORS."); // Find a better, more maintainable way to do this. ~~Alex
+            }
+            else if (newMsg.startsWith("CLIENT: SETCOLOR ")){
+                setColors(newMsg.substring(16));
+            }
+            else if (newMsg.startsWith("CLIENT: STATECOLORS")){
+                String colors = "R:"+red+", B:"+blue+", G:"+green+".";
+                //String colors = java.util.HexFormat.of().toHexDigits(red).substring(6).toUpperCase()+String.format("0x%02X",green)+String.format("0x%02X",blue)+".";
+                getMessage(colors);
+                colors = java.util.HexFormat.of().toHexDigits((red*256 + blue)*256 + green).substring(2).toUpperCase()+".";
+                //System.out.println(colors);
+                getMessage(colors);
+            }
+        }
+        else {
+            client.send(newMsg);
+        }
         tf_message.clear();
    }
 
-   public void on_Enter_Pressed(){
-        on_Button_pressed();
-   }
+
 
     class Client{
+        void seppuku() { // I used `seppuku` because `close` I think is used for some other things, or deprecated or something.
+            System.out.println("Client tried to kill itself but I don't actually know how to do that since it's a GUI thing so here's an error message instead.");
+        }
         Socket socket;
         BufferedReader bufferedReader;
         BufferedWriter bufferedWriter;
@@ -124,7 +176,7 @@ public class Controller extends Thread{
                 //System.out.println(bufferedReader.readLine());
             }
             catch (IOException e){
-                System.out.println("Error in server sending message.");
+                System.out.println("Error in client sending message.");
                 return;
             }
         }
