@@ -93,8 +93,9 @@ public class PlayerVsAIController {
     Seed[][] board = new Seed[3][3];
     Boolean player = true;
     Boolean gameRunning = true;
-    Image xImage = new Image(getClass().getResourceAsStream("x2.png"));
-    Image oImage = new Image(getClass().getResourceAsStream("o2.png"));
+    //pngs swapped by will because this was the easiest way...
+    Image xImage = new Image(getClass().getResourceAsStream("o2.png"));
+    Image oImage = new Image(getClass().getResourceAsStream("x2.png"));
 
     ImageView tLeft = new ImageView();
     ImageView tCent = new ImageView();
