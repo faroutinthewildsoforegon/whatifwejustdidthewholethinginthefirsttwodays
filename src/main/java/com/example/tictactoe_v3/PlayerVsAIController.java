@@ -1,7 +1,5 @@
 package com.example.tictactoe_v3;
 
-import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,14 +17,12 @@ import java.util.regex.Pattern;
 
 public class PlayerVsAIController {
 
+    public void initialize(){
+        startGame();
+    }
 
-    Task task = new Task<Void>() {
-        @Override
-        public Void call() {
-            System.out.println("Thread started");
-            return null;
-        }
-    };
+
+
 
     @FXML
     Button topLeft = new Button();
@@ -57,18 +53,20 @@ public class PlayerVsAIController {
     @FXML
     Button returnToMainButton = new Button();
 
+
     public void returnToMainButtonPressed(ActionEvent event) throws IOException {
         Main.STAGE.hide(1);
         Main.STAGE.show(0);
+        player2Score.setText("0");
+        player1Score.setText("0");
+        startGame();
+        gameRunning = true;
     }
 
     @FXML
     Button onRestartButtonPressed = new Button();
-
     public void onRestartButtonPressed(ActionEvent event) {
-        player1Name.setText("PLAYER");
-        testLabel.setText("what the");
-        System.out.println("I clicked the show button");
+        startGame();
     }
 
     @FXML
@@ -91,22 +89,6 @@ public class PlayerVsAIController {
     public static String updatedP2N;
     public static String updatedP1S;
     public static String updatedP2S;
-
-    Thread checkForChange = new Thread(() -> {
-        try {
-            while (!Main.shutdownRequested.get()) {
-                if (updateFlag) {
-                    player1Name.setText(updatedP1N);
-                    player2Name.setText(updatedP2N);
-                    player1Score.setText("0");
-                    player2Score.setText("0");
-                }
-                Thread.sleep(1000);
-            }
-        } catch (InterruptedException ex) {
-        }
-    });
-
 
     Seed[][] board = new Seed[3][3];
     Boolean player = true;
@@ -164,6 +146,8 @@ public class PlayerVsAIController {
                     System.out.println("Player" + (player ? " 1 " : " 2 ") + "has won!");
                     statusLabel.setText("Player" + (player ? " 1 " : " Computer ") + "has won!");
                     gameRunning = false;
+                    player2Score.setText(Integer.toString(Integer.parseInt(player2Score.getText()) + 1));
+                    System.out.println(player2Score.getText());
                 }
 
                 // check if results in draw
@@ -184,6 +168,7 @@ public class PlayerVsAIController {
                         System.out.println("Player" + (player ? " 1 " : " 2 ") + "has won!");
                         statusLabel.setText("Player" + (player ? " 1 " : " Computer ") + "has won!");
                         gameRunning = false;
+                        player2Score.setText(Integer.toString(Integer.parseInt(player2Score.getText()) + 1));
                     }
 
                     // check if results in draw
@@ -207,6 +192,7 @@ public class PlayerVsAIController {
     }
 
     public void onExitButtonPressed(ActionEvent event) throws IOException {
+        startGame();
         Main.CURRENT_STAGE.close();
         Main.GLOBAL_MENU_STAGE.show();
     }
@@ -490,7 +476,6 @@ public class PlayerVsAIController {
     }
 
     public void makeMove(Boolean player, String fxId) {
-
 
         switch (fxId) {
             case "topLeft":

@@ -1,6 +1,7 @@
 package com.example.tictactoe_v3;
 
 import javafx.application.Platform;
+import javafx.beans.InvalidationListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,15 +17,19 @@ import javafx.stage.StageStyle;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
 import static com.example.tictactoe_v3.Main.STAGE;
 
 public class MainMenuController {
 
-    /* New Stuff that I hope works */
     private Parent parent;
     private Scene scene;
     private Stage stage;
+
+    static String p1n;
+    static String p2n;
 
     @FXML
     Button playLocalButton = new Button();
@@ -38,27 +43,7 @@ public class MainMenuController {
     Button againstAIButton = new Button();
 
     public void onLocalButtonPressed(ActionEvent event)throws IOException{
-        /*
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LocalTicTacToe.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
-        stage.setTitle("Tic Tac Toe! (Local)");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-         */
-
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("LocalPlaySettings.fxml"));
-//        Parent root = (Parent)loader.load();
-//        scene = new Scene(root);
-//        stage = new Stage();
-//        stage.setScene(scene);
-//        stage.initStyle(StageStyle.TRANSPARENT);
-//        stage.setTitle("title");
-//        stage.show();
-
-        againstPlayerButton.setVisible(!againstPlayerButton.isVisible());
-        againstAIButton.setVisible((!againstAIButton.isVisible()));
+        showHideLocalPlayOptions();
     }
     public void onAgainstPlayerButtonPressed(ActionEvent event) throws IOException{
         System.out.println("onAgainstPlayerButtonPressed");
@@ -69,12 +54,8 @@ public class MainMenuController {
 
     public void onAgainstAIButtonPressed(ActionEvent event) throws IOException{
         System.out.println("onAgainstAIButton has been pressed");
-
-        Main.dtt();
-        PlayerVsAIController.updatedP1N = "Player";
-        PlayerVsAIController.updatedP2N = "AI";
-        PlayerVsAIController.updateFlag = true;
-
+        if(ifLocalPlayOptionsVisable())
+            showHideLocalPlayOptions();
         STAGE.stageList.get(1).setTitle("Local Play (Against AI)");
         STAGE.hide(0);
         STAGE.show(1);
@@ -88,6 +69,13 @@ public class MainMenuController {
 
         Main.DELETEME = !Main.DELETEME;
     }
+    public void showHideLocalPlayOptions(){
+        againstPlayerButton.setVisible(!againstPlayerButton.isVisible());
+        againstAIButton.setVisible((!againstAIButton.isVisible()));
+    }
 
+    public boolean ifLocalPlayOptionsVisable(){
+        return againstPlayerButton.isVisible();
+    }
 
 }

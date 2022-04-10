@@ -104,7 +104,7 @@
                   <Blend mode="MULTIPLY" opacity="0.78" />
                </effect>
             </ImageView>
-            <Label fx:id="player2Name" alignment="CENTER" layoutX="10.0" layoutY="24.0" prefHeight="48.0" prefWidth="121.0" style="-fx-font-weight: bold;" text="AI (X)" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="player2Name" alignment="CENTER" layoutX="10.0" layoutY="24.0" prefHeight="48.0" prefWidth="121.0" style="-fx-font-weight: bold;" text="AI" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Courier New" size="16.0" />
                </font>
@@ -126,7 +126,7 @@
                   <Blend mode="MULTIPLY" opacity="0.78" />
                </effect>
             </ImageView>
-            <Label fx:id="player1Name" alignment="CENTER" layoutX="10.0" layoutY="24.0" prefHeight="48.0" prefWidth="121.0" style="-fx-font-weight: bold;" text="Player 1 (O)" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="player1Name" alignment="CENTER" layoutX="10.0" layoutY="24.0" prefHeight="48.0" prefWidth="121.0" style="-fx-font-weight: bold;" text="Player 1" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Courier New" size="16.0" />
                </font>
