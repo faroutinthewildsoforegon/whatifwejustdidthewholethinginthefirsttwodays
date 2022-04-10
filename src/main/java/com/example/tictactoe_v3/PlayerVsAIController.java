@@ -21,9 +21,6 @@ public class PlayerVsAIController {
         startGame();
     }
 
-
-
-
     @FXML
     Button topLeft = new Button();
     @FXML
@@ -44,8 +41,6 @@ public class PlayerVsAIController {
     Button botRight = new Button();
     @FXML
     Button startButton = new Button();
-    @FXML
-    Button printBoardButton = new Button();
     @FXML
     Label statusLabel = new Label();
     @FXML
@@ -69,8 +64,7 @@ public class PlayerVsAIController {
         startGame();
     }
 
-    @FXML
-    public Label testLabel = new Label();
+
     @FXML
     public Label player1Name = new Label();
     @FXML
@@ -80,19 +74,10 @@ public class PlayerVsAIController {
     @FXML
     public Label player1Score = new Label();
 
-    public void refresh(String text) {
-        testLabel.setText(text);
-    }
-
-    public static boolean updateFlag = false;
-    public static String updatedP1N;
-    public static String updatedP2N;
-    public static String updatedP1S;
-    public static String updatedP2S;
-
     Seed[][] board = new Seed[3][3];
     Boolean player = true;
     Boolean gameRunning = true;
+
     //pngs swapped by will because this was the easiest way...
     Image xImage = new Image(getClass().getResourceAsStream("o2.png"));
     Image oImage = new Image(getClass().getResourceAsStream("x2.png"));
@@ -108,12 +93,12 @@ public class PlayerVsAIController {
     ImageView bRight = new ImageView();
 
     //for testing:
-    Seed tboard[][] =
-            {
-                    {Seed.X, Seed.EMPTY, Seed.O},
-                    {Seed.EMPTY, Seed.X, Seed.EMPTY},
-                    {Seed.O, Seed.O, Seed.O}
-            };
+//    Seed tboard[][] =
+//            {
+//                    {Seed.X, Seed.EMPTY, Seed.O},
+//                    {Seed.EMPTY, Seed.X, Seed.EMPTY},
+//                    {Seed.O, Seed.O, Seed.O}
+//            };
 
     public void startGame() {
         // for debugging
@@ -326,7 +311,7 @@ public class PlayerVsAIController {
                 return score;
         }
         // if no more moves and no winner, return 0 for draw
-        if (checkForDraw() == true) {
+        if (checkForDraw()) {
             return 0;
         }
 
@@ -439,39 +424,30 @@ public class PlayerVsAIController {
         if (row == 0 && col == 0) {
             return "topLeft";
         }
-        ;
         if (row == 0 && col == 1) {
             return "topCent";
         }
-        ;
         if (row == 0 && col == 2) {
             return "topRight";
         }
-        ;
         if (row == 1 && col == 0) {
             return "midLeft";
         }
-        ;
         if (row == 1 && col == 1) {
             return "midCent";
         }
-        ;
         if (row == 1 && col == 2) {
             return "midRight";
         }
-        ;
         if (row == 2 && col == 0) {
             return "botLeft";
         }
-        ;
         if (row == 2 && col == 1) {
             return "botCent";
         }
-        ;
         if (row == 2 && col == 2) {
             return "botRight";
         }
-        ;
         return "no possible move";
 
     }
@@ -634,18 +610,6 @@ public class PlayerVsAIController {
                     board[2][2] = Seed.O;
                 }
                 break;
-        }
-    }
-
-    public void onEndGame() throws IOException {
-        if (checkForWin(player)) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("EndgameStatus.fxml"));
-            Parent root = (Parent) loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setTitle("Winner!");
-            stage.show();
         }
     }
 
