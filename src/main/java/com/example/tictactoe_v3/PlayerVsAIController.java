@@ -15,6 +15,16 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**************************************************
+ * Game must be started in the initialize function!
+ * MainMenuController cannot talk to/alter the game
+ * after the program is started.
+ *
+ * On the exit to menu button is presses, programmer
+ * MUST reset the board.
+ *
+ **************************************************/
+
 public class PlayerVsAIController {
 
     public void initialize(){

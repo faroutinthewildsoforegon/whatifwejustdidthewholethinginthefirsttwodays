@@ -47,7 +47,9 @@ public class Main extends Application {
         STAGE.show(0);
 
         /* INITIALIZE OTHER STAGES HERE */
-        STAGE.addStage("Game.fxml", 800, 700);
+        STAGE.addStage("PlayerVsAI2.fxml", 800, 700);
+        STAGE.addStage("TwoPlayerLocal.fxml", 800, 700);
+
 
     }
 

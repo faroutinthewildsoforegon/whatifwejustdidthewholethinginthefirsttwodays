@@ -26,9 +26,11 @@ public class MainMenuController {
     }
     public void onAgainstPlayerButtonPressed(ActionEvent event) throws IOException{
         System.out.println("onAgainstPlayerButtonPressed");
-        STAGE.stageList.get(1).setTitle("Local Play (Against Player)");
+        if(ifLocalPlayOptionsVisable())
+            showHideLocalPlayOptions();
+        STAGE.stageList.get(2).setTitle("Local Play (Against Player)");
         STAGE.hide(0);
-        STAGE.show(1);
+        STAGE.show(2);
     }
 
     public void onAgainstAIButtonPressed(ActionEvent event) throws IOException{

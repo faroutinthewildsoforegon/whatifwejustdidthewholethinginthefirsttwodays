@@ -1,0 +1,308 @@
+[33mcommit bd4d546c84bfe701702bf104a3b5f1e18a52f55e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Sun Apr 10 00:44:54 2022 -0700
+
+    Consult previous commit message.
+
+[33mcommit c82c290f7454a8334a36c989b71964da240536da[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Sun Apr 10 00:27:00 2022 -0700
+
+    Please CTRL-F for .
+
+[33mcommit 70788b258fa85cca492dea325bd4a2769978e5aa[m
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Sat Apr 9 18:40:18 2022 -0700
+
+    eric made a UI for the client.
+
+[33mcommit 6ed19ab7a2e14c196feda0abd09529c6eedef138[m[33m ([m[1;31morigin/cli[m[33m)[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Apr 5 23:46:59 2022 -0700
+
+    Altered version.
+
+[33mcommit 5e287e6ebbb6ec7ab5d4273cea24a3c30c29c9bc[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Apr 5 19:41:43 2022 -0700
+
+    Messaging application.
+
+[33mcommit 5a0898e20ac1de09f4377ea2d8511bf7bccc3064[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Sun Apr 3 17:17:31 2022 -0700
+
+    test
+
+[33mcommit 15d3e5db89aed59290699714134c6b9534a92161[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Sun Apr 3 17:07:43 2022 -0700
+
+    updating the stuff
+
+[33mcommit c5902ee73ba302b031a4c52783dd6a4532f3a9c1[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Fri Mar 11 12:28:01 2022 -0800
+
+    more work on stage ui stuff
+
+[33mcommit 5919282bb982a5cdbeb779769daafa623a1c243f[m
+Merge: 17c6f91 5105953
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Fri Mar 11 05:38:47 2022 -0800
+
+    Merge branch 'devbranch_will' of https://github.com/faroutinthewildsoforegon/whatifwejustdidthewholethinginthefirsttwodays into devbranch_will
+
+[33mcommit 17c6f9186215554ab63815a44cd58962872d776c[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Fri Mar 11 05:37:43 2022 -0800
+
+    see previous commit message
+
+[33mcommit e20019e09e218bef08e7400377507024bd43d82d[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Thu Mar 10 19:07:35 2022 -0800
+
+    work on ui and unworking version of sceneController capability
+
+[33mcommit 5105953633012037554c5179b2f0dfedebfc80ed[m
+Merge: de7bfd2 d80ba7f
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Thu Mar 10 06:43:49 2022 -0800
+
+    updated devbranch_will
+
+[33mcommit d80ba7f689703f657cc79b3aaa79317fc990f679[m
+Merge: 68589b5 7807123
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Mon Mar 7 19:05:33 2022 -0800
+
+    Merge branch 'devbranch_will'
+    update main with new deliverable
+
+[33mcommit 7807123b54ebb62eeffc28d19064a2d8c97a4c38[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Mon Mar 7 19:00:45 2022 -0800
+
+    Prioritized winning over blocking
+
+[33mcommit e588e7333a4204ed88113ed4e54e243fd8fc917f[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Mon Mar 7 17:46:12 2022 -0800
+
+    Merged the shit
+
+[33mcommit ae7a83fe9de7faa9c0f4f8337e7954874683124a[m
+Merge: 9aabe17 0238c7e
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Mon Mar 7 17:26:58 2022 -0800
+
+    Merge branch 'devbranch_eric' of https://github.com/faroutinthewildsoforegon/whatifwejustdidthewholethinginthefirsttwodays into devbranch_will
+
+[33mcommit 0238c7e790c446b52b7e0a48551b1ca49b49d9b3[m
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Mon Mar 7 17:25:28 2022 -0800
+
+    third times the charm?
+
+[33mcommit b1d4e50b0141e33777259b5ec08d95c16dcd03cb[m
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Mon Mar 7 17:04:58 2022 -0800
+
+    This has working AI
+
+[33mcommit 9aabe1771c927410cf601f96922f3ee8a4e50483[m
+Merge: fb40284 82ab89b
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Mon Mar 7 17:04:16 2022 -0800
+
+    UI UPDATE
+
+[33mcommit fb402844bd0bae84f985c81e3fe1ab7f5fc8ecf0[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Mon Mar 7 16:57:37 2022 -0800
+
+    UI UPDATE
+
+[33mcommit 68589b5ce5ebfcf59573bfd6d179964ff7699998[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Mon Mar 7 14:18:04 2022 -0800
+
+    ignore this
+
+[33mcommit 9f6c21535ab39bf3db8d1a07f55c975f5d78b9a2[m
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Mon Mar 7 07:50:48 2022 -0800
+
+    Working 2 player. Stripped UI. Switched build systems.
+
+[33mcommit 82ab89b5dbbb7c161898d7b9c1953808cecf0223[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Wed Mar 2 16:47:23 2022 -0800
+
+    ignore this commit
+
+[33mcommit 0de86b278aaa03ba187cade52f022f8318872192[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Wed Mar 2 16:45:05 2022 -0800
+
+    ignore this commit
+
+[33mcommit 6112e0241742282b63bd8de04ee92215aab7e799[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Wed Feb 16 17:48:13 2022 -0800
+
+    Learning JavaFx
+
+[33mcommit de7bfd2e68d5783bbc2a5ef8efdbe2ffef95e670[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Wed Jan 26 19:17:06 2022 -0800
+
+    updating
+
+[33mcommit 895a36041afb96b40464b09cf94ab6e480d0de81[m
+Merge: 86f4c2f 0a94407
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Wed Jan 26 19:02:17 2022 -0800
+
+    Merge remote-tracking branch 'origin/devbranch_eric' into devbranch_will
+
+[33mcommit 0a94407adcaa32b884ad15a44db314fc82d52753[m
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Wed Jan 26 18:51:33 2022 -0800
+
+    it went wrong
+
+[33mcommit 86f4c2f4f6dd9253e2bf141f875ca3db934403c4[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Wed Jan 26 18:48:42 2022 -0800
+
+    fixed conflicting file
+
+[33mcommit a070f3578e9829f41a9f22b638e0627fc4c3c0c8[m
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Wed Jan 26 18:47:37 2022 -0800
+
+    this will conflict with others
+
+[33mcommit 99138f84ba2635fe3858495e80e25f69c15cc07d[m
+Author: willjedynak <willmail@thejedynaks.com>
+Date:   Wed Jan 26 18:46:53 2022 -0800
+
+    add conflicting file
+
+[33mcommit 074e6a0f10a4ef4a11d4f8e71e25a918ef624cfe[m
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Wed Jan 26 18:41:09 2022 -0800
+
+    i added a text file from eric.
+
+[33mcommit 3972a0c5e6e80d0194b60c8ce02948ff0c9fc013[m
+Author: Will Jedynak <willmail@thejedynaks.com>
+Date:   Wed Jan 26 18:40:46 2022 -0800
+
+    adding w.txt
+
+[33mcommit 64805282f408967422d36af128cc800a7a950139[m
+Merge: 3e2d47b 9ef956a
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Wed Jan 26 18:37:37 2022 -0800
+
+    Merge branch 'devbranch' of https://github.com/faroutinthewildsoforegon/whatifwejustdidthewholethinginthefirsttwodays into devbranch_eric
+
+[33mcommit 9ef956aa2db33bd6a1f06084e65877594877b58e[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Wed Jan 26 18:37:02 2022 -0800
+
+    Fuck Windows and its nonsense about question marks.
+
+[33mcommit daf98e3c997c5b9756590a71bf51c300521e2e6c[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Wed Jan 26 18:34:30 2022 -0800
+
+    First example commit.
+
+[33mcommit 2a8d95b2564d6648017e636a567e3d72bc12f6cc[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Wed Jan 26 15:26:20 2022 -0800
+
+    Revert to this if needed.
+
+[33mcommit 4e4f33ce0530be0c5e79c65f67f55b1a21043ab7[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Jan 25 18:46:05 2022 -0800
+
+    Added better art.
+
+[33mcommit ed83a1b000bb5c1e015ce1d8275ab72bb5ced856[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Jan 25 09:48:39 2022 -0800
+
+    Project complete.
+
+[33mcommit 4b266f40eb7830556a3ef78fdc381e8ada54e2ef[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Jan 25 08:54:22 2022 -0800
+
+    Made turns work, had to do a fucky because threads outrunning each other.  "DON'T TOUCH THIS".
+
+[33mcommit 280f8914a94fbd1ac4e410eb1d5a50c53f27f30a[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Jan 25 08:16:47 2022 -0800
+
+    Working version.
+
+[33mcommit 97f195bb0d2be48328d25dad127edfb49231418f[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Jan 25 05:37:28 2022 -0800
+
+    Steady progress.
+
+[33mcommit 1510f6146841997cd513fb00954f7dd76da2fdc4[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Jan 25 05:12:29 2022 -0800
+
+    Rollback point.
+
+[33mcommit 7cee1be43c98f8d938c311c0c896cee2e2b1fe4e[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Jan 25 04:58:00 2022 -0800
+
+    Networking test.
+
+[33mcommit 7e3116b4b864e6e827fbd648bbe99024fd3a3a15[m[33m ([m[1;31morigin/othercover[m[33m)[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Tue Jan 25 03:05:01 2022 -0800
+
+    Added nearly functional singleplayer skeleton in directory .
+
+[33mcommit 3e2d47b1a8696ff3fa2c520123a5d9dd61c1f152[m
+Merge: 5a33027 de8bafb
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Tue Jan 25 00:12:19 2022 -0800
+
+    Merge branch 'jef_branch' of https://github.com/faroutinthewildsoforegon/whatifwejustdidthewholethinginthefirsttwodays into jef_branch
+
+[33mcommit 5a330273f8aaec6f74b7cb9e06dfda1e53146f74[m
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Tue Jan 25 00:10:54 2022 -0800
+
+    added base gui project
+
+[33mcommit 0d38edd38d23d38674a24f41c8480fe50f9d9c3c[m
+Author: Magicalest Girl <akanstul0@saddleback.edu>
+Date:   Mon Jan 24 23:30:14 2022 -0800
+
+    First commit.
+
+[33mcommit de8bafb7ac53effd24458f570c08bd17985cb4cb[m
+Author: PlumLariat <65928319+PlumLariat@users.noreply.github.com>
+Date:   Mon Jan 24 22:27:27 2022 -0800
+
+    I added a dumb file
+
+[33mcommit d30957e3d57aed46ae54857c0d23a4a59b4102a8[m
+Author: faroutinthewildsoforegon <92412747+faroutinthewildsoforegon@users.noreply.github.com>
+Date:   Mon Jan 24 20:42:37 2022 -0800
+
+    Initial commit

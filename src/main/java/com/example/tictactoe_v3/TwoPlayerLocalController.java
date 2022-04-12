@@ -13,7 +13,15 @@ import java.util.regex.Pattern;
 
 public class TwoPlayerLocalController {
 
-    // Butt ton of buttons now bbbbbbbbbbbbb
+    public void initialize(){
+        startGame();
+    }
+
+    @FXML
+    Label player1Score = new Label();
+    @FXML
+    Label player2Score = new Label();
+
     @FXML
     Button topLeft = new Button();
     @FXML
@@ -33,20 +41,29 @@ public class TwoPlayerLocalController {
     @FXML
     Button botRight = new Button();
     @FXML
-    Button startButton = new Button();
+    Button returnToMainButton = new Button();
+    public void onReturnToMainButtonPressed(ActionEvent event) throws IOException{
+        System.out.println("onReturnToMainButtonPressed has been pressed");
+        Main.STAGE.hide(2);
+        Main.STAGE.show(0);
+        player2Score.setText("0");
+        player1Score.setText("0");
+        startGame();
+        gameRunning = true;
+    }
     @FXML
-    Button printBoardButton = new Button();
-    @FXML
-    Label statusLabel = new Label();
-    @FXML
-    Button exitButton = new Button();
+    Button restartButton = new Button();
+    public void onRestartButtonPressed(ActionEvent event) throws IOException{
+        startGame();
+        System.out.println("onRestartButtonHasBeenPressed");
+    }
 
     Seed[][] board = new Seed[3][3];                // The underlying board, *see Seed.java*
-    Boolean player = true;                          // true = player 1, x . false = player 2, o
+    Boolean player = false;                          // true = player 1, x . false = player 2, o
     Boolean gameRunning = false;                    // self-explanatory; checks game state
     //Images imported for x and o pictures
-    Image xImage = new Image(getClass().getResourceAsStream("x2.png"));
-    Image oImage = new Image(getClass().getResourceAsStream("o2.png"));
+    Image xImage = new Image(getClass().getResourceAsStream("o2.png"));
+    Image oImage = new Image(getClass().getResourceAsStream("x2.png"));
 
     // This is so dumb, but I had to do it to fix a bug.
     ImageView tLeft = new ImageView();
@@ -92,18 +109,26 @@ public class TwoPlayerLocalController {
             // note: this could be changed to go inside the player move before player is changed.
             if(gameRunning && checkForWin(!player)){
                 System.out.println("Player" + (!player ? " 1 " : " 2 ") + "has won!" );
-                statusLabel.setText("Player" + (!player ? " 1 " : " 2 ") + "has won!" );
+                //statusLabel.setText("Player" + (!player ? " 1 " : " 2 ") + "has won!" );
                 gameRunning = false;
+                if(!player){
+                    player1Score.setText(Integer.toString(Integer.parseInt(player1Score.getText()) + 1));
+                    System.out.println(player1Score.getText());
+                }
+                else{
+                    player2Score.setText(Integer.toString(Integer.parseInt(player2Score.getText()) + 1));
+                    System.out.println(player2Score.getText());
+                }
             }
 
             if(gameRunning && checkForDraw()){
-                statusLabel.setText("It's a draw!");
+                //statusLabel.setText("It's a draw!");
                 System.out.println("It's a draw!");
                 gameRunning = false;
             }
         }
         else{
-            statusLabel.setText("The game must be running for a move to be entered.");
+            //statusLabel.setText("The game must be running for a move to be entered.");
             System.out.println("The game must be running for a move to be entered.");
         }
 
@@ -411,10 +436,10 @@ public class TwoPlayerLocalController {
     public void updateStatusLabel(Boolean player){
 
         if(player){
-            statusLabel.setText("Player 1's turn");
+            //statusLabel.setText("Player 1's turn");
         }
         else {
-            statusLabel.setText("Player 2's turn");
+            //statusLabel.setText("Player 2's turn");
         }
 
     }
