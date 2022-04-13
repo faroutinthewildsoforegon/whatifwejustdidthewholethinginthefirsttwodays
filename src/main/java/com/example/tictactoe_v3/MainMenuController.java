@@ -43,12 +43,13 @@ public class MainMenuController {
     }
 
     public void onOnlineButtonPressed(ActionEvent event){
-        if(!Main.DELETEME)
-            System.out.println("Computer goes first");
-        else
-            System.out.println("Playersssss goes first");
+        System.out.println("onOnlineButtonPressed");
+        if(ifLocalPlayOptionsVisable())
+            showHideLocalPlayOptions();
+        STAGE.stageList.get(3).setTitle("Online Play");
+        STAGE.hide(0);
+        STAGE.show(3);
 
-        Main.DELETEME = !Main.DELETEME;
     }
     public void showHideLocalPlayOptions(){
         againstPlayerButton.setVisible(!againstPlayerButton.isVisible());

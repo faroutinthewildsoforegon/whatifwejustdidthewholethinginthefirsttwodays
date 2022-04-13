@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe_v3.MainMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe_v3.MainMenuController">
    <children>
       <ImageView fitHeight="491.0" fitWidth="671.0" pickOnBounds="true">
          <image>
@@ -23,7 +23,7 @@
          <font>
             <Font size="16.0" />
          </font></Button>
-      <Button fx:id="playOnlineButton" layoutX="36.0" layoutY="350.0" mnemonicParsing="false" onAction="#onOnlineButtonPressed" prefHeight="56.0" prefWidth="298.0" stylesheets="@ButtonStyle.css" text="Switch Player/Computer First Move" />
+      <Button fx:id="playOnlineButton" layoutX="36.0" layoutY="350.0" mnemonicParsing="false" onAction="#onOnlineButtonPressed" prefHeight="56.0" prefWidth="298.0" stylesheets="@ButtonStyle.css" text="Online" />
       <Label fx:id="welcomeLabel" layoutX="95.0" layoutY="39.0" opacity="0.0" text="Welcome to Tic Tac Toe!" />
       <Button fx:id="againstAIButton" layoutX="336.0" layoutY="245.0" mnemonicParsing="false" onAction="#onAgainstAIButtonPressed" prefHeight="56.0" prefWidth="172.0" stylesheets="@ButtonStyle.css" text="Against AI" visible="false">
          <styleClass>
