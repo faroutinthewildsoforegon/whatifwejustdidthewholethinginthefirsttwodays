@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="tictactoe_v3" />
+        <module name="server3" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="tictactoe_v3" target="17" />
+      <module name="server3" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

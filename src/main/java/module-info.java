@@ -1,8 +1,9 @@
-module com.example.tictactoe_v3 {
+module com.example.server3 {
     requires javafx.controls;
     requires javafx.fxml;
 
+    //requires org.controlsfx.controls;
 
-    opens com.example.tictactoe_v3 to javafx.fxml;
-    exports com.example.tictactoe_v3;
+    opens com.example.server3 to javafx.fxml;
+    exports com.example.server3;
 }
